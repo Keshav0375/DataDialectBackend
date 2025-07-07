@@ -1,0 +1,21 @@
+langchain_openai == 0.3.27
+pymysql == 1.1.1
+chromadb
+python-dotenv == 1.1.1
+pandas == 2.3.0
+boto3 == 1.39.3
+fastapi == 0.115.14
+uvicorn == 0.35.0
+langgraph == 0.5.1
+langchain == 0.3.26
+langchain-community == 0.3.27
+pydantic == 2.11.7
+redis==5.0.1
+asyncio-redis==0.16.0
+motor==3.3.2
+sqlalchemy==2.0.23
+aiofiles==23.2.0
+python-multipart == 0.0.20
+httpx == 0.28.1
+pymongo == 4.13.2
+motor == 3.3.2
