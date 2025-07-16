@@ -2,6 +2,7 @@ from datetime import datetime
 from app.database.connection import collection
 from bson import ObjectId
 from logging_config import setup_logger
+from typing import List, Dict
 
 logger = setup_logger("DataDialect", "DataDialect.log")
 
@@ -31,7 +32,7 @@ def update_upload_record(upload_id: str, update_data: dict):
         update_data["updated_at"] = datetime.utcnow()
         result = collection.update_one(
             {
-                "id": object_id
+                "_id": object_id
             },
             {
                 "$set": update_data
@@ -54,3 +55,14 @@ def get_upload_record(upload_id: str):
         logger.error(f"Error fetching record: {E}")
         return None
 
+
+def update_chat_history(self, upload_id: str, messages: List[Dict[str, str]]):
+    """Update Chat history in MongoDB"""
+    try:
+        object_id = ObjectId(upload_id)
+        self.collection.update_one(
+            {"_id": object_id},
+            {"$set": {"chat_history": messages, "updated_at": datetime.utcnow()}}
+        )
+    except Exception as E:
+        logger.error(f"Error updating Chat History: {E}")
