@@ -8,6 +8,7 @@ from app.api.endpoints.status import router as status_router
 from app.api.endpoints.sql_query import router as sql_query
 from app.api.endpoints.no_sql_query import router as nosql_query
 from app.api.endpoints.schema_generator import router as schema_generator
+from app.api.endpoints.rag_chat import router as rag_chat
 
 app = FastAPI(
     title="DataDialect",
@@ -31,6 +32,7 @@ app.include_router(status_router, prefix="/api/v1", tags=["status"])
 app.include_router(sql_query, prefix="/api/v1", tags=["sql-query"])
 app.include_router(schema_generator, prefix="/api/v1", tags=["schema-generator"])
 app.include_router(nosql_query, prefix="/api/v1", tags=["nosql-query"])
+app.include_router(rag_chat, prefix="/api/v1", tags=["rag-chat"])
 
 
 @app.get("/")

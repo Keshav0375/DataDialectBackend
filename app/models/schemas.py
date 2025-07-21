@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import List, Dict, TypedDict, Optional, Any
+from datetime import datetime
 from langchain_community.utilities.sql_database import SQLDatabase
 from typing import Dict, List, Any, Optional
 from typing_extensions import TypedDict
@@ -133,3 +133,47 @@ class QueryExecutionResult(BaseModel):
     response_type: Optional[str]
     execution_stats: Optional[Dict[str, Any]]
     error: Optional[str] = None
+
+
+
+class QueryInput(BaseModel):
+    """Enhanced query input supporting multiple documents"""
+    question: str
+    session_id: str = Field(default=None)
+    document_ids: Optional[List[int]] = Field(default=None, description="List of document IDs to search within")
+
+
+class QueryResponse(BaseModel):
+    answer: str
+    session_id: str
+
+
+class DocumentInfo(BaseModel):
+    """Enhanced document info with more metadata"""
+    id: int
+    filename: str
+    upload_timestamp: datetime
+    collection_id: Optional[str] = None
+    file_size: Optional[int] = None
+    file_type: Optional[str] = None
+    chunk_count: Optional[int] = None
+
+
+class CollectionInfo(BaseModel):
+    """Information about a document collection"""
+    collection_id: str
+    documents: List[DocumentInfo]
+    total_count: int
+    total_chunks: Optional[int] = None
+
+
+class DeleteFileRequest(BaseModel):
+    file_id: int
+
+
+class DocumentUploadResponse(BaseModel):
+    """Response for multiple document upload"""
+    message: str
+    collection_id: str
+    documents: List[Dict[str, Any]]
+    total_files: int

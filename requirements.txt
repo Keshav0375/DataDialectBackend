@@ -19,5 +19,20 @@ python-multipart == 0.0.20
 httpx == 0.28.1
 pymongo == 4.13.2
 motor == 3.3.2
-cryptography==45.0.5
+cryptography == 45.0.5
 langchain-mongodb == 0.6.2
+langchain_chroma == 0.2.4
+langchain-tavily == 0.2.10
+pypdf == 5.8.0
+pymupdf == 1.26.3
+pytesseract>=0.3.10
+pillow>=10.0.0
+opencv-python>=4.9.0
+numpy>=1.24.0
+openai-whisper>=20231117
+moviepy>=1.0.3
+librosa>=0.10.1
+torch>=2.0.0
+tika>=1.24
+langdetect>=1.0.9
+docx2txt == 0.9

@@ -2925,3 +2925,1781 @@ error
 2025-07-17 19:34:56,779 [INFO] 1 change detected
 2025-07-17 19:35:00,767 [INFO] 1 change detected
 2025-07-17 19:35:05,738 [INFO] 7 changes detected
+2025-07-17 19:35:30,925 [INFO] 1 change detected
+2025-07-17 19:35:31,854 [INFO] 2 changes detected
+2025-07-17 19:35:32,316 [INFO] 92 changes detected
+2025-07-17 19:35:32,729 [INFO] 1 change detected
+2025-07-17 19:35:56,041 [INFO] 6 changes detected
+2025-07-17 19:36:32,124 [INFO] 1 change detected
+2025-07-17 19:58:34,742 [INFO] 7 changes detected
+2025-07-17 19:58:35,135 [INFO] 1 change detected
+2025-07-18 08:58:35,357 [INFO] MongoDB----------
+2025-07-18 08:58:35,393 [INFO] Empty record created
+2025-07-18 08:58:35,397 [INFO] Data Schema
+2025-07-18 08:58:35,423 [INFO] Updating data and status of file
+2025-07-18 08:59:38,352 [INFO] Loading upload record from ID: 687a44fb810ea0bae4e6c19a
+2025-07-18 08:59:38,356 [INFO] Validating record status
+2025-07-18 08:59:38,358 [INFO] Initializing database connection
+2025-07-18 08:59:38,718 [INFO] Database Connection established successfully
+2025-07-18 08:59:38,720 [INFO] Getting Table Information
+2025-07-18 08:59:38,721 [INFO] Selecting relevant tables
+2025-07-18 08:59:38,722 [INFO] Selected tables: Table Name: productlines
+Table Description: Stores information about the different product lines offered by the company, including a unique name, textual description, HTML description , and image. Categorizes products into different lines.
+
+Table Name: products
+Table Description: Contains details of each product sold by the company, including code, name, product line, scale, vendor, description, stock quantity, buy price, and MSRP. Linked to the productlines table
+
+Table Name: offices
+Table Description: Holds data on the company's sales offices, including office code, city, phone number, address , state, country, postal code, and territory. Each office is uniquely identified by its office code.
+
+Table Name: employees
+Table Description: Stores information about employees, including number, last name, first name, job title, contact info, and office code. Links to offices and maps organizational structure through the reportsTo attribute.
+
+Table Name: customers
+Table Description: Captures data on customers, including customer number, name,  contact details,  address,  assigned sales rep and credit limit. Central to managing customer relationships and sales processes.
+
+Table Name: payments
+Table Description: Records payments made by customers, tracking the customer number, check number , payment date, and amount. Linked to the customers tables for financial tracking and account management.
+
+Table Name: orders
+Table Description: Details each sales order placed by customers, including order number, dates, status, comments, and customer number. Linked to the customers table, tracking sales transactions
+
+Table Name: orderdetails
+Table Description: Describes individual line items for each sales order, including order number, product code, quantity, price, and order line number. Links orders to products, detailing the items sold
+
+
+2025-07-18 08:59:38,725 [INFO] Generating SQL Query
+2025-07-18 08:59:38,834 [INFO] Extracted 6 example(s) from python_file
+2025-07-18 08:59:41,137 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 08:59:43,397 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 08:59:43,950 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 08:59:44,711 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 08:59:44,727 [INFO] Generated query: SELECT * FROM customers WHERE contactFirstName = 'John';
+2025-07-18 08:59:44,730 [INFO] Executing SQL Query
+2025-07-18 08:59:45,123 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 08:59:45,653 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 08:59:45,658 [INFO] Query executed Successfully
+2025-07-18 08:59:45,664 [INFO] Generating Final Answer
+2025-07-18 08:59:45,665 [INFO] Final answer generated successfully
+2025-07-18 08:59:45,667 [INFO] Updating memory
+2025-07-18 08:59:45,669 [ERROR] Error updating Chat History: 'Can you enlist all the customers named JOHN' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2025-07-18 08:59:45,670 [INFO] Memory updated successfully
+2025-07-18 09:00:19,207 [INFO] Loading upload record from ID: 687a44fb810ea0bae4e6c19a
+2025-07-18 09:00:19,208 [INFO] Using Cache Upload Record
+2025-07-18 09:00:19,210 [INFO] Validating record status
+2025-07-18 09:00:19,211 [INFO] Initializing database connection
+2025-07-18 09:00:19,287 [INFO] Database Connection established successfully
+2025-07-18 09:00:19,292 [INFO] Getting Table Information
+2025-07-18 09:00:19,293 [INFO] Using cached table information
+2025-07-18 09:00:19,295 [INFO] Selecting relevant tables
+2025-07-18 09:00:19,296 [INFO] Selected tables: Table Name: productlines
+Table Description: Stores information about the different product lines offered by the company, including a unique name, textual description, HTML description , and image. Categorizes products into different lines.
+
+Table Name: products
+Table Description: Contains details of each product sold by the company, including code, name, product line, scale, vendor, description, stock quantity, buy price, and MSRP. Linked to the productlines table
+
+Table Name: offices
+Table Description: Holds data on the company's sales offices, including office code, city, phone number, address , state, country, postal code, and territory. Each office is uniquely identified by its office code.
+
+Table Name: employees
+Table Description: Stores information about employees, including number, last name, first name, job title, contact info, and office code. Links to offices and maps organizational structure through the reportsTo attribute.
+
+Table Name: customers
+Table Description: Captures data on customers, including customer number, name,  contact details,  address,  assigned sales rep and credit limit. Central to managing customer relationships and sales processes.
+
+Table Name: payments
+Table Description: Records payments made by customers, tracking the customer number, check number , payment date, and amount. Linked to the customers tables for financial tracking and account management.
+
+Table Name: orders
+Table Description: Details each sales order placed by customers, including order number, dates, status, comments, and customer number. Linked to the customers table, tracking sales transactions
+
+Table Name: orderdetails
+Table Description: Describes individual line items for each sales order, including order number, product code, quantity, price, and order line number. Links orders to products, detailing the items sold
+
+
+2025-07-18 09:00:19,301 [INFO] Generating SQL Query
+2025-07-18 09:00:19,437 [INFO] Extracted 6 example(s) from python_file
+2025-07-18 09:00:20,009 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:00:20,302 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:00:22,145 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:00:22,149 [INFO] Generated query: SELECT `officeCode` FROM employees WHERE firstName = 'Mary' AND lastName = 'Patterson';
+2025-07-18 09:00:22,151 [INFO] Executing SQL Query
+2025-07-18 09:00:22,537 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:00:22,884 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:00:22,887 [INFO] Query executed Successfully
+2025-07-18 09:00:22,893 [INFO] Generating Final Answer
+2025-07-18 09:00:22,894 [INFO] Final answer generated successfully
+2025-07-18 09:00:22,896 [INFO] Updating memory
+2025-07-18 09:00:22,897 [ERROR] Error updating Chat History: 'office code of mary' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2025-07-18 09:00:22,897 [INFO] Memory updated successfully
+2025-07-18 09:16:36,036 [INFO] Starting schema analysis for collection: NL2SQL
+2025-07-18 09:16:37,268 [INFO] Document structure analysis completed
+2025-07-18 09:16:39,268 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:16:39,279 [INFO] Schema description generated
+2025-07-18 09:16:41,560 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:16:41,570 [ERROR] JSON cleaning failed: Expecting ',' delimiter: line 16 column 90 (char 608)
+2025-07-18 09:16:41,570 [INFO] Generated 3 few-shot examples
+2025-07-18 09:16:43,685 [INFO] Starting schema analysis for collection: NL2SQL
+2025-07-18 09:16:43,725 [INFO] Document structure analysis completed
+2025-07-18 09:16:44,838 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:16:44,840 [INFO] Schema description generated
+2025-07-18 09:16:46,957 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:16:46,960 [ERROR] JSON cleaning failed: Expecting ',' delimiter: line 16 column 104 (char 622)
+2025-07-18 09:16:46,960 [INFO] Generated 3 few-shot examples
+2025-07-18 09:22:17,362 [INFO] Starting schema analysis for collection: NL2SQL
+2025-07-18 09:22:17,508 [INFO] Document structure analysis completed
+2025-07-18 09:22:19,075 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:22:19,081 [INFO] Schema description generated
+2025-07-18 09:22:21,577 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:22:21,582 [ERROR] JSON cleaning failed: Expecting ',' delimiter: line 3 column 102 (char 109)
+2025-07-18 09:22:21,583 [INFO] Generated 3 few-shot examples
+2025-07-18 09:22:23,127 [INFO] Starting schema analysis for collection: NL2SQL
+2025-07-18 09:22:23,164 [INFO] Document structure analysis completed
+2025-07-18 09:22:24,523 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:22:24,528 [INFO] Schema description generated
+2025-07-18 09:22:27,026 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:22:27,028 [ERROR] JSON cleaning failed: Expecting value: line 17 column 88 (char 692)
+2025-07-18 09:22:27,028 [INFO] Generated 3 few-shot examples
+2025-07-18 09:22:40,423 [INFO] Executing query: can you tell how many documents contain csv content?
+2025-07-18 09:22:44,661 [INFO] Initializing MongoDB connection
+2025-07-18 09:22:44,890 [INFO] MongoDB connection successful - 8 documents in NL2SQL
+2025-07-18 09:22:44,892 [INFO] Creating optimized query generation prompt
+2025-07-18 09:22:44,892 [INFO] Query prompt template created successfully
+2025-07-18 09:22:44,893 [INFO] Generating MongoDB aggregation pipeline
+2025-07-18 09:22:45,537 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:22:45,862 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:22:46,942 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:22:46,946 [INFO] Generated 2 stage pipeline
+2025-07-18 09:22:46,948 [INFO] Executing MongoDB aggregation pipeline
+2025-07-18 09:22:46,974 [INFO] Query executed successfully - 1 documents returned
+2025-07-18 09:22:46,977 [INFO] Generating adaptive conversational response
+2025-07-18 09:22:47,593 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:22:47,596 [INFO] Generated detailed response for 1 results
+2025-07-18 09:22:47,603 [INFO] Query executed successfully, returned 1 results
+2025-07-18 09:23:05,202 [INFO] Executing query: How many documents contain python content
+2025-07-18 09:23:09,143 [INFO] Initializing MongoDB connection
+2025-07-18 09:23:09,161 [INFO] MongoDB connection successful - 8 documents in NL2SQL
+2025-07-18 09:23:09,169 [INFO] Creating optimized query generation prompt
+2025-07-18 09:23:09,170 [INFO] Query prompt template created successfully
+2025-07-18 09:23:09,171 [INFO] Generating MongoDB aggregation pipeline
+2025-07-18 09:23:09,741 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:23:09,991 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:23:11,098 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 09:23:11,102 [INFO] Generated 2 stage pipeline
+2025-07-18 09:23:11,103 [INFO] Executing MongoDB aggregation pipeline
+2025-07-18 09:23:11,153 [INFO] Query executed successfully - 0 documents returned
+2025-07-18 09:23:11,156 [INFO] Generating adaptive conversational response
+2025-07-18 09:23:11,156 [INFO] Generated no_results response for 0 results
+2025-07-18 09:23:11,158 [INFO] Query executed successfully, returned 0 results
+2025-07-18 09:27:08,230 [INFO] 1 change detected
+2025-07-18 09:27:11,442 [INFO] 8 changes detected
+2025-07-18 09:27:13,035 [INFO] 1 change detected
+2025-07-18 09:27:17,629 [INFO] 1 change detected
+2025-07-18 09:27:19,414 [INFO] 1 change detected
+2025-07-18 09:29:53,787 [INFO] 7 changes detected
+2025-07-18 09:31:46,755 [INFO] 1 change detected
+2025-07-18 09:34:30,345 [INFO] 1 change detected
+2025-07-18 09:34:59,071 [INFO] 1 change detected
+2025-07-18 09:35:00,656 [INFO] 1 change detected
+2025-07-18 09:35:01,126 [INFO] 6 changes detected
+2025-07-18 09:35:02,199 [INFO] 1 change detected
+2025-07-18 09:35:06,328 [INFO] 1 change detected
+2025-07-18 09:35:08,009 [INFO] 1 change detected
+2025-07-18 09:36:17,830 [INFO] 8 changes detected
+2025-07-18 09:36:19,240 [INFO] 9 changes detected
+2025-07-18 09:36:19,753 [INFO] 5 changes detected
+2025-07-18 09:36:20,260 [INFO] 1 change detected
+2025-07-18 09:36:24,394 [INFO] 1 change detected
+2025-07-18 09:36:25,369 [INFO] 1 change detected
+2025-07-18 09:36:25,740 [INFO] 1 change detected
+2025-07-18 09:36:26,878 [INFO] 1 change detected
+2025-07-18 09:39:50,885 [INFO] 8 changes detected
+2025-07-18 09:39:52,073 [INFO] 2 changes detected
+2025-07-18 09:39:52,631 [INFO] 5 changes detected
+2025-07-18 09:39:53,345 [INFO] 1 change detected
+2025-07-18 09:39:57,739 [INFO] 1 change detected
+2025-07-18 09:39:59,419 [INFO] 1 change detected
+2025-07-18 09:40:13,032 [INFO] 1 change detected
+2025-07-18 09:43:57,564 [INFO] 4 changes detected
+2025-07-18 09:43:58,979 [INFO] 1 change detected
+2025-07-18 09:44:00,098 [INFO] 1 change detected
+2025-07-18 09:44:04,123 [INFO] 1 change detected
+2025-07-18 09:44:05,961 [INFO] 1 change detected
+2025-07-18 09:49:54,733 [INFO] 1 change detected
+2025-07-18 09:49:56,023 [INFO] 1 change detected
+2025-07-18 09:49:56,638 [INFO] 6 changes detected
+2025-07-18 09:49:57,464 [INFO] 1 change detected
+2025-07-18 09:49:58,246 [INFO] 1 change detected
+2025-07-18 09:50:02,678 [INFO] 1 change detected
+2025-07-18 09:50:04,419 [INFO] 1 change detected
+2025-07-18 09:50:09,567 [INFO] 4 changes detected
+2025-07-18 09:50:11,007 [INFO] 1 change detected
+2025-07-18 09:50:12,129 [INFO] 1 change detected
+2025-07-18 09:50:17,238 [INFO] 1 change detected
+2025-07-18 09:50:19,135 [INFO] 1 change detected
+2025-07-18 09:50:22,654 [INFO] 1 change detected
+2025-07-18 09:50:27,088 [INFO] 1 change detected
+2025-07-18 09:50:28,479 [INFO] 1 change detected
+2025-07-18 09:50:28,941 [INFO] 6 changes detected
+2025-07-18 09:50:29,865 [INFO] 1 change detected
+2025-07-18 09:50:32,762 [INFO] 4 changes detected
+2025-07-18 09:50:33,907 [INFO] 2 changes detected
+2025-07-18 09:50:35,031 [INFO] 1 change detected
+2025-07-18 09:50:38,200 [INFO] 1 change detected
+2025-07-18 09:50:39,463 [INFO] 1 change detected
+2025-07-18 09:50:41,408 [INFO] 1 change detected
+2025-07-18 09:51:33,413 [INFO] 3 changes detected
+2025-07-18 09:51:37,087 [INFO] 1 change detected
+2025-07-18 09:51:43,898 [INFO] 1 change detected
+2025-07-18 09:52:07,341 [INFO] 1 change detected
+2025-07-18 09:52:15,914 [INFO] 1 change detected
+2025-07-18 09:52:22,168 [INFO] 1 change detected
+2025-07-18 09:52:23,490 [INFO] 1 change detected
+2025-07-18 09:53:14,981 [INFO] 4 changes detected
+2025-07-18 09:53:16,249 [INFO] 1 change detected
+2025-07-18 09:53:17,326 [INFO] 1 change detected
+2025-07-18 09:53:21,087 [INFO] 1 change detected
+2025-07-18 09:53:22,618 [INFO] 1 change detected
+2025-07-18 09:53:23,545 [INFO] 1 change detected
+2025-07-18 09:53:51,329 [INFO] 4 changes detected
+2025-07-18 09:53:52,673 [INFO] 1 change detected
+2025-07-18 09:53:53,650 [INFO] 1 change detected
+2025-07-18 09:53:57,436 [INFO] 1 change detected
+2025-07-18 09:53:58,964 [INFO] 1 change detected
+2025-07-18 09:54:00,599 [INFO] 1 change detected
+2025-07-18 09:54:19,252 [INFO] 4 changes detected
+2025-07-18 09:54:20,383 [INFO] 1 change detected
+2025-07-18 09:54:21,357 [INFO] 1 change detected
+2025-07-18 09:54:23,452 [INFO] 1 change detected
+2025-07-18 09:54:25,289 [INFO] 1 change detected
+2025-07-18 09:54:26,866 [INFO] 1 change detected
+2025-07-18 09:54:28,849 [INFO] 2 changes detected
+2025-07-18 09:54:30,170 [INFO] 2 changes detected
+2025-07-18 09:54:30,842 [INFO] 6 changes detected
+2025-07-18 09:54:31,635 [INFO] 1 change detected
+2025-07-18 09:54:35,056 [INFO] 1 change detected
+2025-07-18 09:54:36,637 [INFO] 1 change detected
+2025-07-18 09:54:40,552 [INFO] 1 change detected
+2025-07-18 09:54:41,879 [INFO] 1 change detected
+2025-07-18 09:54:42,907 [INFO] 7 changes detected
+2025-07-18 09:54:45,791 [INFO] 7 changes detected
+2025-07-18 09:54:47,686 [INFO] 1 change detected
+2025-07-18 09:54:49,518 [INFO] 1 change detected
+2025-07-18 09:54:51,053 [INFO] 1 change detected
+2025-07-18 09:54:51,467 [INFO] 1 change detected
+2025-07-18 09:55:21,454 [INFO] 4 changes detected
+2025-07-18 09:55:22,660 [INFO] 1 change detected
+2025-07-18 09:55:23,678 [INFO] 1 change detected
+2025-07-18 09:55:24,147 [INFO] 1 change detected
+2025-07-18 09:55:28,086 [INFO] 1 change detected
+2025-07-18 09:55:29,616 [INFO] 1 change detected
+2025-07-18 09:55:47,917 [INFO] 1 change detected
+2025-07-18 09:55:52,123 [INFO] 1 change detected
+2025-07-18 09:56:05,133 [INFO] 3 changes detected
+2025-07-18 09:56:06,356 [INFO] 1 change detected
+2025-07-18 09:56:07,433 [INFO] 1 change detected
+2025-07-18 09:56:23,750 [INFO] 2 changes detected
+2025-07-18 09:56:25,271 [INFO] 6 changes detected
+2025-07-18 09:56:26,241 [INFO] 1 change detected
+2025-07-18 09:56:31,191 [INFO] 1 change detected
+2025-07-18 09:56:33,388 [INFO] 1 change detected
+2025-07-18 09:56:33,743 [INFO] 1 change detected
+2025-07-18 09:58:25,614 [INFO] 8 changes detected
+2025-07-18 09:58:26,939 [INFO] 2 changes detected
+2025-07-18 09:58:27,909 [INFO] 1 change detected
+2025-07-18 09:58:31,635 [INFO] 1 change detected
+2025-07-18 09:58:33,535 [INFO] 1 change detected
+2025-07-18 09:58:39,759 [INFO] 1 change detected
+2025-07-18 09:58:48,324 [INFO] 1 change detected
+2025-07-18 09:58:49,738 [INFO] 1 change detected
+2025-07-18 09:58:50,357 [INFO] 6 changes detected
+2025-07-18 09:58:50,884 [INFO] 1 change detected
+2025-07-18 09:58:54,811 [INFO] 1 change detected
+2025-07-18 09:58:56,286 [INFO] 1 change detected
+2025-07-18 10:00:17,145 [INFO] 5 changes detected
+2025-07-18 10:00:19,054 [INFO] 9 changes detected
+2025-07-18 10:00:20,782 [INFO] 1 change detected
+2025-07-18 10:00:25,324 [INFO] 1 change detected
+2025-07-18 10:00:27,309 [INFO] 1 change detected
+2025-07-18 10:08:01,084 [INFO] 7 changes detected
+2025-07-18 10:08:20,565 [INFO] 1 change detected
+2025-07-18 10:08:36,819 [INFO] 1 change detected
+2025-07-18 10:08:46,870 [INFO] 1 change detected
+2025-07-18 10:08:48,036 [INFO] 1 change detected
+2025-07-18 10:08:48,707 [INFO] 6 changes detected
+2025-07-18 10:08:49,506 [INFO] 1 change detected
+2025-07-18 10:08:53,632 [INFO] 1 change detected
+2025-07-18 10:08:55,270 [INFO] 1 change detected
+2025-07-18 10:09:47,174 [INFO] 4 changes detected
+2025-07-18 10:09:48,316 [INFO] 1 change detected
+2025-07-18 10:09:49,289 [INFO] 1 change detected
+2025-07-18 10:09:53,114 [INFO] 1 change detected
+2025-07-18 10:09:54,652 [INFO] 1 change detected
+2025-07-18 10:09:55,018 [INFO] 1 change detected
+2025-07-18 10:10:33,340 [INFO] 1 change detected
+2025-07-18 10:10:34,628 [INFO] 1 change detected
+2025-07-18 10:10:35,032 [INFO] 6 changes detected
+2025-07-18 10:10:35,749 [INFO] 1 change detected
+2025-07-18 10:10:39,632 [INFO] 1 change detected
+2025-07-18 10:10:41,120 [INFO] 1 change detected
+2025-07-18 10:11:19,771 [INFO] 1 change detected
+2025-07-18 10:13:03,377 [INFO] 8 changes detected
+2025-07-18 10:13:04,851 [INFO] 9 changes detected
+2025-07-18 10:13:05,771 [INFO] 1 change detected
+2025-07-18 10:13:09,391 [INFO] 1 change detected
+2025-07-18 10:13:10,875 [INFO] 1 change detected
+2025-07-18 10:13:15,254 [INFO] 1 change detected
+2025-07-18 10:13:18,424 [INFO] 1 change detected
+2025-07-18 10:14:42,649 [INFO] 4 changes detected
+2025-07-18 10:14:44,068 [INFO] 1 change detected
+2025-07-18 10:14:44,988 [INFO] 1 change detected
+2025-07-18 10:14:45,904 [INFO] 1 change detected
+2025-07-18 10:14:46,679 [INFO] 1 change detected
+2025-07-18 10:14:49,083 [INFO] 1 change detected
+2025-07-18 10:14:50,564 [INFO] 1 change detected
+2025-07-18 10:18:25,334 [INFO] 4 changes detected
+2025-07-18 10:18:26,786 [INFO] 1 change detected
+2025-07-18 10:18:27,708 [INFO] 1 change detected
+2025-07-18 10:18:29,440 [INFO] 1 change detected
+2025-07-18 10:18:31,534 [INFO] 1 change detected
+2025-07-18 10:18:33,119 [INFO] 1 change detected
+2025-07-18 10:19:26,408 [INFO] 4 changes detected
+2025-07-18 10:19:27,479 [INFO] 1 change detected
+2025-07-18 10:19:28,353 [INFO] 1 change detected
+2025-07-18 10:19:32,124 [INFO] 1 change detected
+2025-07-18 10:19:32,998 [INFO] 1 change detected
+2025-07-18 10:19:33,871 [INFO] 1 change detected
+2025-07-18 10:19:35,657 [INFO] 4 changes detected
+2025-07-18 10:19:37,066 [INFO] 1 change detected
+2025-07-18 10:19:38,087 [INFO] 1 change detected
+2025-07-18 10:19:41,550 [INFO] 1 change detected
+2025-07-18 10:19:41,999 [INFO] 1 change detected
+2025-07-18 10:19:43,384 [INFO] 1 change detected
+2025-07-18 10:20:26,067 [INFO] 4 changes detected
+2025-07-18 10:20:27,408 [INFO] 1 change detected
+2025-07-18 10:20:28,478 [INFO] 1 change detected
+2025-07-18 10:20:32,146 [INFO] 1 change detected
+2025-07-18 10:20:33,727 [INFO] 1 change detected
+2025-07-18 10:20:34,094 [INFO] 1 change detected
+2025-07-18 10:20:58,292 [INFO] 4 changes detected
+2025-07-18 10:20:59,765 [INFO] 1 change detected
+2025-07-18 10:21:00,948 [INFO] 1 change detected
+2025-07-18 10:21:01,315 [INFO] 1 change detected
+2025-07-18 10:21:05,904 [INFO] 1 change detected
+2025-07-18 10:21:07,537 [INFO] 1 change detected
+2025-07-18 10:21:10,603 [INFO] 1 change detected
+2025-07-18 10:21:12,032 [INFO] 1 change detected
+2025-07-18 10:23:02,814 [INFO] 3 changes detected
+2025-07-18 10:23:05,200 [INFO] 1 change detected
+2025-07-18 10:23:10,309 [INFO] 1 change detected
+2025-07-18 10:23:12,243 [INFO] 14 changes detected
+2025-07-18 10:23:13,421 [INFO] 1 change detected
+2025-07-18 10:23:15,433 [INFO] 1 change detected
+2025-07-18 10:23:15,829 [INFO] 1 change detected
+2025-07-18 10:23:30,849 [INFO] 1 change detected
+2025-07-18 10:25:48,218 [INFO] 4 changes detected
+2025-07-18 10:25:48,583 [INFO] 1 change detected
+2025-07-18 10:25:49,606 [INFO] 1 change detected
+2025-07-18 10:25:52,877 [INFO] 1 change detected
+2025-07-18 10:25:54,254 [INFO] 5 changes detected
+2025-07-18 10:25:55,710 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:25:55,890 [INFO] 4 changes detected
+2025-07-18 10:25:56,259 [INFO] 12 changes detected
+2025-07-18 10:25:57,132 [INFO] 1 change detected
+2025-07-18 10:25:57,493 [INFO] 1 change detected
+2025-07-18 10:26:10,542 [INFO] 1 change detected
+2025-07-18 10:26:11,030 [INFO] 1 change detected
+2025-07-18 10:28:22,614 [INFO] 4 changes detected
+2025-07-18 10:28:22,988 [INFO] 1 change detected
+2025-07-18 10:28:23,912 [INFO] 1 change detected
+2025-07-18 10:28:27,128 [INFO] 1 change detected
+2025-07-18 10:28:29,826 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:28:29,984 [INFO] 8 changes detected
+2025-07-18 10:28:31,724 [INFO] 8 changes detected
+2025-07-18 10:28:33,972 [INFO] 1 change detected
+2025-07-18 10:28:37,336 [INFO] 1 change detected
+2025-07-18 10:28:37,748 [INFO] 1 change detected
+2025-07-18 10:29:27,566 [INFO] 4 changes detected
+2025-07-18 10:29:28,031 [INFO] 8 changes detected
+2025-07-18 10:29:29,059 [INFO] 1 change detected
+2025-07-18 10:29:32,580 [INFO] 1 change detected
+2025-07-18 10:29:35,582 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:29:35,737 [INFO] 3 changes detected
+2025-07-18 10:29:37,628 [INFO] 5 changes detected
+2025-07-18 10:29:39,108 [INFO] 1 change detected
+2025-07-18 10:30:44,957 [INFO] 2 changes detected
+2025-07-18 10:30:45,417 [INFO] 1 change detected
+2025-07-18 10:30:45,784 [INFO] 1 change detected
+2025-07-18 10:31:17,468 [INFO] 1 change detected
+2025-07-18 10:31:26,496 [INFO] 10 changes detected
+2025-07-18 10:31:50,241 [INFO] 1 change detected
+2025-07-18 10:31:50,600 [INFO] 1 change detected
+2025-07-18 10:32:03,652 [INFO] 4 changes detected
+2025-07-18 10:32:04,022 [INFO] 1 change detected
+2025-07-18 10:32:05,250 [INFO] 1 change detected
+2025-07-18 10:32:09,082 [INFO] 1 change detected
+2025-07-18 10:32:12,056 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:32:12,240 [INFO] 3 changes detected
+2025-07-18 10:32:14,133 [INFO] 5 changes detected
+2025-07-18 10:32:15,319 [INFO] 11 changes detected
+2025-07-18 10:32:16,192 [INFO] 1 change detected
+2025-07-18 10:32:16,555 [INFO] 5 changes detected
+2025-07-18 10:32:20,583 [INFO] 1 change detected
+2025-07-18 10:32:21,013 [INFO] 1 change detected
+2025-07-18 10:32:54,457 [INFO] 4 changes detected
+2025-07-18 10:32:54,825 [INFO] 4 changes detected
+2025-07-18 10:32:59,567 [INFO] 1 change detected
+2025-07-18 10:33:05,235 [INFO] 1 change detected
+2025-07-18 10:33:13,690 [INFO] 1 change detected
+2025-07-18 10:33:29,920 [INFO] 3 changes detected
+2025-07-18 10:33:31,723 [INFO] 1 change detected
+2025-07-18 10:33:33,467 [INFO] 1 change detected
+2025-07-18 10:33:35,463 [INFO] 4 changes detected
+2025-07-18 10:33:36,400 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 10:33:36,586 [INFO] 9 changes detected
+2025-07-18 10:33:36,944 [INFO] 1 change detected
+2025-07-18 10:34:18,125 [INFO] 2 changes detected
+2025-07-18 10:34:18,492 [INFO] 1 change detected
+2025-07-18 10:34:24,547 [INFO] 1 change detected
+2025-07-18 10:34:56,814 [INFO] 1 change detected
+2025-07-18 10:35:08,868 [INFO] 4 changes detected
+2025-07-18 10:35:10,814 [INFO] 2 changes detected
+2025-07-18 10:35:11,939 [INFO] 1 change detected
+2025-07-18 10:35:12,300 [INFO] 1 change detected
+2025-07-18 10:35:16,072 [INFO] 1 change detected
+2025-07-18 10:35:17,504 [INFO] 5 changes detected
+2025-07-18 10:35:19,140 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:35:19,298 [INFO] 3 changes detected
+2025-07-18 10:35:22,359 [INFO] 1 change detected
+2025-07-18 10:35:22,826 [INFO] 1 change detected
+2025-07-18 10:35:23,857 [INFO] 1 change detected
+2025-07-18 10:35:23,939 [INFO] Session ID: 123, User Query: can you list all the references
+2025-07-18 10:35:24,656 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 10:35:24,667 [ERROR] Error in chat: 'StateGraph' object has no attribute 'invoke'
+2025-07-18 10:35:36,860 [INFO] 1 change detected
+2025-07-18 10:45:32,906 [INFO] 4 changes detected
+2025-07-18 10:45:36,413 [INFO] 2 changes detected
+2025-07-18 10:45:38,553 [INFO] 1 change detected
+2025-07-18 10:45:46,061 [INFO] 1 change detected
+2025-07-18 10:45:49,775 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:45:49,980 [INFO] 3 changes detected
+2025-07-18 10:45:51,111 [INFO] 1 change detected
+2025-07-18 10:46:06,387 [INFO] 1 change detected
+2025-07-18 10:47:19,578 [INFO] 1 change detected
+2025-07-18 10:47:20,197 [INFO] 1 change detected
+2025-07-18 10:47:33,464 [INFO] 1 change detected
+2025-07-18 10:47:33,999 [INFO] 5 changes detected
+2025-07-18 10:47:36,369 [INFO] 1 change detected
+2025-07-18 10:47:38,877 [INFO] 1 change detected
+2025-07-18 10:47:40,790 [INFO] 7 changes detected
+2025-07-18 10:47:41,964 [INFO] 1 change detected
+2025-07-18 10:47:45,121 [INFO] 1 change detected
+2025-07-18 10:47:46,339 [INFO] 4 changes detected
+2025-07-18 10:47:48,385 [INFO] 7 changes detected
+2025-07-18 10:47:49,460 [INFO] 1 change detected
+2025-07-18 10:47:52,923 [INFO] 1 change detected
+2025-07-18 10:47:55,806 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:47:55,981 [INFO] 3 changes detected
+2025-07-18 10:47:57,111 [INFO] 1 change detected
+2025-07-18 10:50:39,580 [INFO] 1 change detected
+2025-07-18 10:50:40,023 [INFO] 1 change detected
+2025-07-18 10:50:40,628 [INFO] 1 change detected
+2025-07-18 10:51:16,737 [INFO] 4 changes detected
+2025-07-18 10:51:17,201 [INFO] 8 changes detected
+2025-07-18 10:51:18,536 [INFO] 1 change detected
+2025-07-18 10:51:23,486 [INFO] 1 change detected
+2025-07-18 10:51:26,860 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:51:27,057 [INFO] 3 changes detected
+2025-07-18 10:51:27,412 [INFO] 5 changes detected
+2025-07-18 10:51:27,781 [INFO] 2 changes detected
+2025-07-18 10:51:28,317 [INFO] 1 change detected
+2025-07-18 10:51:32,273 [INFO] 1 change detected
+2025-07-18 10:51:34,256 [INFO] 1 change detected
+2025-07-18 10:51:34,614 [INFO] 1 change detected
+2025-07-18 10:51:36,760 [INFO] 4 changes detected
+2025-07-18 10:51:38,669 [INFO] 1 change detected
+2025-07-18 10:51:39,400 [INFO] 1 change detected
+2025-07-18 10:51:40,175 [INFO] 1 change detected
+2025-07-18 10:51:44,211 [INFO] 1 change detected
+2025-07-18 10:51:45,736 [INFO] 5 changes detected
+2025-07-18 10:51:47,326 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:51:47,479 [INFO] 3 changes detected
+2025-07-18 10:51:50,742 [INFO] 1 change detected
+2025-07-18 10:51:53,035 [INFO] 2 changes detected
+2025-07-18 10:51:53,154 [INFO] Session ID: 123, User Query: can you list all the references
+2025-07-18 10:51:53,540 [INFO] 1 change detected
+2025-07-18 10:51:54,128 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 10:51:54,596 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 400 BadRequest"
+2025-07-18 10:51:54,598 [ERROR] Error in LangGraph execution: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+2025-07-18 10:51:54,598 [ERROR] RAG workflow failed: Workflow execution failed: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+2025-07-18 10:51:54,598 [ERROR] Error in chat: 500: RAG workflow error: Workflow execution failed: Error code: 400 - {'error': {'code': 'BadRequest', 'message': 'response_format value as json_schema is enabled only for api versions 2024-08-01-preview and later'}}
+2025-07-18 10:52:09,221 [INFO] 1 change detected
+2025-07-18 10:55:21,552 [INFO] 1 change detected
+2025-07-18 10:55:23,993 [INFO] 1 change detected
+2025-07-18 10:56:23,619 [INFO] 11 changes detected
+2025-07-18 10:56:25,068 [INFO] 3 changes detected
+2025-07-18 10:56:25,990 [INFO] 1 change detected
+2025-07-18 10:56:27,907 [INFO] 1 change detected
+2025-07-18 10:56:30,553 [INFO] 1 change detected
+2025-07-18 10:56:33,521 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:56:33,708 [INFO] 13 changes detected
+2025-07-18 10:56:36,617 [INFO] 1 change detected
+2025-07-18 10:56:38,358 [INFO] 1 change detected
+2025-07-18 10:56:38,479 [INFO] Session ID: 123, User Query: can you list all the references
+2025-07-18 10:56:38,717 [INFO] 1 change detected
+2025-07-18 10:56:39,206 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 10:56:39,673 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 400 model_error"
+2025-07-18 10:56:39,676 [ERROR] Error in LangGraph execution: Error code: 400 - {'error': {'message': "'json_schema' is not one of ['json_object', 'text'] - 'response_format.type'", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2025-07-18 10:56:39,677 [ERROR] RAG workflow failed: Workflow execution failed: Error code: 400 - {'error': {'message': "'json_schema' is not one of ['json_object', 'text'] - 'response_format.type'", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2025-07-18 10:56:39,677 [ERROR] Error in chat: 500: RAG workflow error: Workflow execution failed: Error code: 400 - {'error': {'message': "'json_schema' is not one of ['json_object', 'text'] - 'response_format.type'", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+2025-07-18 10:56:48,099 [INFO] 1 change detected
+2025-07-18 10:56:48,529 [INFO] 1 change detected
+2025-07-18 10:57:04,794 [INFO] 1 change detected
+2025-07-18 10:57:46,490 [INFO] 1 change detected
+2025-07-18 10:57:48,175 [INFO] 1 change detected
+2025-07-18 10:58:09,716 [INFO] 1 change detected
+2025-07-18 10:58:28,813 [INFO] 4 changes detected
+2025-07-18 10:58:30,598 [INFO] 2 changes detected
+2025-07-18 10:58:31,681 [INFO] 1 change detected
+2025-07-18 10:58:36,134 [INFO] 1 change detected
+2025-07-18 10:58:40,072 [INFO] 4 changes detected
+2025-07-18 10:58:42,331 [INFO] 2 changes detected
+2025-07-18 10:58:43,607 [INFO] 1 change detected
+2025-07-18 10:58:47,636 [INFO] 1 change detected
+2025-07-18 10:58:50,767 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:58:50,957 [INFO] 8 changes detected
+2025-07-18 10:58:52,899 [INFO] 1 change detected
+2025-07-18 10:58:53,369 [INFO] 1 change detected
+2025-07-18 10:58:55,964 [INFO] 1 change detected
+2025-07-18 10:58:58,420 [INFO] 1 change detected
+2025-07-18 10:59:21,096 [INFO] 8 changes detected
+2025-07-18 10:59:22,776 [INFO] 2 changes detected
+2025-07-18 10:59:23,902 [INFO] 1 change detected
+2025-07-18 10:59:27,783 [INFO] 1 change detected
+2025-07-18 10:59:29,623 [INFO] 1 change detected
+2025-07-18 10:59:31,478 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:59:31,671 [INFO] 13 changes detected
+2025-07-18 10:59:35,627 [INFO] 1 change detected
+2025-07-18 10:59:38,544 [INFO] 1 change detected
+2025-07-18 10:59:38,904 [INFO] 1 change detected
+2025-07-18 10:59:41,403 [INFO] 4 changes detected
+2025-07-18 10:59:43,262 [INFO] 2 changes detected
+2025-07-18 10:59:43,658 [INFO] 1 change detected
+2025-07-18 10:59:44,062 [INFO] 1 change detected
+2025-07-18 10:59:45,145 [INFO] 1 change detected
+2025-07-18 10:59:47,697 [INFO] 1 change detected
+2025-07-18 10:59:50,649 [INFO] 1 change detected
+2025-07-18 10:59:53,677 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 10:59:53,868 [INFO] 8 changes detected
+2025-07-18 10:59:57,129 [INFO] 1 change detected
+2025-07-18 10:59:59,073 [INFO] 1 change detected
+2025-07-18 10:59:59,189 [INFO] Session ID: 123, User Query: can you list all the references
+2025-07-18 10:59:59,430 [INFO] 1 change detected
+2025-07-18 10:59:59,916 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 11:00:00,564 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-18 11:00:01,294 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 11:00:01,421 [INFO] 4 changes detected
+2025-07-18 11:00:01,785 [INFO] 3 changes detected
+2025-07-18 11:00:01,880 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-18 11:00:01,883 [ERROR] Error parsing judge response: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2025-07-18 11:00:06,857 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-18 11:00:06,873 [INFO] Session ID: 123, AI Response: The references mentioned in the provided context are:
+
+1. Keshav Arri - Contact details: arri@uwindsor.ca, (647) 227 1538
+2. Olena Syrotkina, PhD - Contact details: SCHOOL OF COMPUTER SCIENCE, 300 OUELLETTE AVE., OFFICE 4004, WINDSOR, ON, CANADA, N9A 7B4, Tel: 519 253 3000 X 4395, OLENA.SYROTKINA@UWINDSOR.CA
+3. Jasbir Singh - Chief Executive Officer, SLIDEOO, Website: https://slideoo.ai, Tel: 647 540 4182, JASBIR@SLIDEOO.AI
+
+Web Search Results:
+1. Title: In an academic paper, do you need to list all your references ... - Quora, URL: https://www.quora.com/In-an-academic-paper-do-you-need-to-list-all-your-references-at-the-end-of-your-paper-or-only-those-mentioned-within-your-text
+2. Title: Compiling a reference list or bibliography - Citing references, URL: https://libguides.reading.ac.uk/citing-references/compilingbibliography
+3. Title: Do all references in a reference list need to be cited in text?, URL: https://academia.stackexchange.com/questions/80060/do-all-references-in-a-reference-list-need-to-be-cited-in-text
+2025-07-18 11:00:06,924 [INFO] 3 changes detected
+2025-07-18 11:00:29,251 [INFO] 1 change detected
+2025-07-18 11:00:29,658 [INFO] 1 change detected
+2025-07-18 11:00:30,029 [INFO] 1 change detected
+2025-07-18 11:01:06,576 [INFO] 1 change detected
+2025-07-18 11:01:10,350 [INFO] 1 change detected
+2025-07-18 11:01:18,318 [INFO] 4 changes detected
+2025-07-18 11:01:20,061 [INFO] 2 changes detected
+2025-07-18 11:01:20,945 [INFO] 1 change detected
+2025-07-18 11:01:21,670 [INFO] 1 change detected
+2025-07-18 11:01:25,131 [INFO] 1 change detected
+2025-07-18 11:01:25,749 [INFO] 1 change detected
+2025-07-18 11:01:28,550 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-18 11:01:28,705 [INFO] 8 changes detected
+2025-07-18 11:01:31,818 [INFO] 1 change detected
+2025-07-18 11:01:33,764 [INFO] 1 change detected
+2025-07-18 11:01:33,854 [INFO] Session ID: 123, User Query: can you list all the references
+2025-07-18 11:01:34,129 [INFO] 1 change detected
+2025-07-18 11:01:34,682 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 11:01:35,388 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-18 11:01:36,037 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-18 11:01:36,172 [INFO] 4 changes detected
+2025-07-18 11:01:36,526 [INFO] 3 changes detected
+2025-07-18 11:01:36,569 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-18 11:01:41,486 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-18 11:01:41,498 [INFO] Session ID: 123, AI Response: The references mentioned in the chat history are:
+
+1. Keshav Arri - Email: arri@uwindsor.ca, Phone: (647) 227 1538
+2. Olena Syrotkina, PhD - Assistant Professor at School of Computer Science, University of Windsor. Contact details: 300 Ouellette Ave., Office 4004, Windsor, ON, Canada, N9A 7B4, Tel: 519 253 3000 X 4395, Email: olena.syrotkina@uwindsor.ca
+3. Jasbir Singh - Chief Executive Officer at SLIDEOO. Website: https://slideoo.ai, Phone: 647 540 4182, Email: jasbir@slideoo.ai
+
+Web Search Results:
+1. Title: ChatGPT can cross reference to other chat history within the same thread - Reddit, URL: https://www.reddit.com/r/ChatGPT/comments/11oj7xj/chatgpt_can_cross_reference_to_other_chat_history/
+2. Title: ChatGPT can now reference all past conversations – April 10, 2025 - OpenAI Community Forum, URL: https://community.openai.com/t/chatgpt-can-now-reference-all-past-conversations-april-10-2025/1229453?page=2
+3. Title: How to Reference Conversations inside other ... - YouTube, URL: https://www.youtube.com/watch?v=MmktqRvo3E8&pp=0gcJCfwAo7VqN5tD
+2025-07-18 11:01:41,576 [INFO] 3 changes detected
+2025-07-18 11:01:50,097 [INFO] 1 change detected
+2025-07-18 11:01:50,588 [INFO] 1 change detected
+2025-07-18 11:02:21,051 [INFO] 1 change detected
+2025-07-18 13:40:51,178 [INFO] 1 change detected
+2025-07-18 13:42:20,576 [INFO] 1 change detected
+2025-07-18 14:08:04,519 [INFO] 1 change detected
+2025-07-18 14:09:02,528 [INFO] 7 changes detected
+2025-07-18 14:34:38,663 [INFO] 1 change detected
+2025-07-20 20:56:15,018 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-20 20:56:58,748 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-20 20:56:59,010 [INFO] 4 changes detected
+2025-07-20 20:57:09,367 [INFO] 1 change detected
+2025-07-20 20:57:13,308 [INFO] 1 change detected
+2025-07-20 20:57:13,666 [INFO] 1 change detected
+2025-07-20 20:58:43,546 [INFO] MongoDB----------
+2025-07-20 20:58:43,602 [INFO] Empty record created
+2025-07-20 20:58:43,604 [INFO] Data Schema
+2025-07-20 20:58:43,639 [INFO] Updating data and status of file
+2025-07-20 21:03:02,319 [INFO] Loading upload record from ID: 687d90c3b848ddb6fb6fe229
+2025-07-20 21:03:02,326 [INFO] Validating record status
+2025-07-20 21:03:02,326 [INFO] Initializing database connection
+2025-07-20 21:03:02,488 [ERROR] Error initializing database connection: (pymysql.err.OperationalError) (1049, "Unknown database 'classsicmodels'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-20 21:03:02,488 [INFO] Getting Table Information
+2025-07-20 21:03:02,489 [INFO] Selecting relevant tables
+2025-07-20 21:03:02,490 [INFO] Selected tables: Table Name: productlines
+Table Description: Stores information about the different product lines offered by the company, including a unique name, textual description, HTML description , and image. Categorizes products into different lines.
+
+Table Name: products
+Table Description: Contains details of each product sold by the company, including code, name, product line, scale, vendor, description, stock quantity, buy price, and MSRP. Linked to the productlines table
+
+Table Name: offices
+Table Description: Holds data on the company's sales offices, including office code, city, phone number, address , state, country, postal code, and territory. Each office is uniquely identified by its office code.
+
+Table Name: employees
+Table Description: Stores information about employees, including number, last name, first name, job title, contact info, and office code. Links to offices and maps organizational structure through the reportsTo attribute.
+
+Table Name: customers
+Table Description: Captures data on customers, including customer number, name,  contact details,  address,  assigned sales rep and credit limit. Central to managing customer relationships and sales processes.
+
+Table Name: payments
+Table Description: Records payments made by customers, tracking the customer number, check number , payment date, and amount. Linked to the customers tables for financial tracking and account management.
+
+Table Name: orders
+Table Description: Details each sales order placed by customers, including order number, dates, status, comments, and customer number. Linked to the customers table, tracking sales transactions
+
+Table Name: orderdetails
+Table Description: Describes individual line items for each sales order, including order number, product code, quantity, price, and order line number. Links orders to products, detailing the items sold
+
+
+2025-07-20 21:03:02,492 [INFO] Generating SQL Query
+2025-07-20 21:03:02,507 [ERROR] Error generating query: (pymysql.err.OperationalError) (1049, "Unknown database 'classsicmodels'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-20 21:03:02,508 [INFO] Executing SQL Query
+2025-07-20 21:03:02,509 [ERROR] Error executing query: No query generated
+2025-07-20 21:03:08,596 [INFO] 1 change detected
+2025-07-20 21:03:14,821 [INFO] 1 change detected
+2025-07-20 21:03:45,225 [INFO] MongoDB----------
+2025-07-20 21:03:45,229 [INFO] Empty record created
+2025-07-20 21:03:45,230 [INFO] Data Schema
+2025-07-20 21:03:45,233 [INFO] Updating data and status of file
+2025-07-20 21:04:23,556 [INFO] Loading upload record from ID: 687d91f1b848ddb6fb6fe22a
+2025-07-20 21:04:23,561 [INFO] Validating record status
+2025-07-20 21:04:23,563 [INFO] Initializing database connection
+2025-07-20 21:04:23,758 [INFO] Database Connection established successfully
+2025-07-20 21:04:23,760 [INFO] Getting Table Information
+2025-07-20 21:04:23,761 [INFO] Selecting relevant tables
+2025-07-20 21:04:23,762 [INFO] Selected tables: Table Name: productlines
+Table Description: Stores information about the different product lines offered by the company, including a unique name, textual description, HTML description , and image. Categorizes products into different lines.
+
+Table Name: products
+Table Description: Contains details of each product sold by the company, including code, name, product line, scale, vendor, description, stock quantity, buy price, and MSRP. Linked to the productlines table
+
+Table Name: offices
+Table Description: Holds data on the company's sales offices, including office code, city, phone number, address , state, country, postal code, and territory. Each office is uniquely identified by its office code.
+
+Table Name: employees
+Table Description: Stores information about employees, including number, last name, first name, job title, contact info, and office code. Links to offices and maps organizational structure through the reportsTo attribute.
+
+Table Name: customers
+Table Description: Captures data on customers, including customer number, name,  contact details,  address,  assigned sales rep and credit limit. Central to managing customer relationships and sales processes.
+
+Table Name: payments
+Table Description: Records payments made by customers, tracking the customer number, check number , payment date, and amount. Linked to the customers tables for financial tracking and account management.
+
+Table Name: orders
+Table Description: Details each sales order placed by customers, including order number, dates, status, comments, and customer number. Linked to the customers table, tracking sales transactions
+
+Table Name: orderdetails
+Table Description: Describes individual line items for each sales order, including order number, product code, quantity, price, and order line number. Links orders to products, detailing the items sold
+
+
+2025-07-20 21:04:23,765 [INFO] Generating SQL Query
+2025-07-20 21:04:23,921 [INFO] Extracted 6 example(s) from python_file
+2025-07-20 21:04:23,933 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-20 21:04:25,268 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:04:25,693 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:04:26,585 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:04:26,618 [INFO] Generated query: SELECT * FROM customers 
+JOIN orders ON customers.customerNumber = orders.customerNumber 
+WHERE orders.orderDate > '2003-01-06';
+2025-07-20 21:04:26,620 [INFO] Executing SQL Query
+2025-07-20 21:04:27,039 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:04:27,484 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 400 model_error"
+2025-07-20 21:04:27,486 [ERROR] Error executing query: Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 36353 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+2025-07-20 21:04:28,793 [INFO] 1 change detected
+2025-07-20 21:05:10,840 [INFO] 1 change detected
+2025-07-20 21:05:37,651 [INFO] Loading upload record from ID: 687d91f1b848ddb6fb6fe22a
+2025-07-20 21:05:37,652 [INFO] Using Cache Upload Record
+2025-07-20 21:05:37,653 [INFO] Validating record status
+2025-07-20 21:05:37,654 [INFO] Initializing database connection
+2025-07-20 21:05:37,775 [INFO] Database Connection established successfully
+2025-07-20 21:05:37,776 [INFO] Getting Table Information
+2025-07-20 21:05:37,777 [INFO] Using cached table information
+2025-07-20 21:05:37,778 [INFO] Selecting relevant tables
+2025-07-20 21:05:37,779 [INFO] Selected tables: Table Name: productlines
+Table Description: Stores information about the different product lines offered by the company, including a unique name, textual description, HTML description , and image. Categorizes products into different lines.
+
+Table Name: products
+Table Description: Contains details of each product sold by the company, including code, name, product line, scale, vendor, description, stock quantity, buy price, and MSRP. Linked to the productlines table
+
+Table Name: offices
+Table Description: Holds data on the company's sales offices, including office code, city, phone number, address , state, country, postal code, and territory. Each office is uniquely identified by its office code.
+
+Table Name: employees
+Table Description: Stores information about employees, including number, last name, first name, job title, contact info, and office code. Links to offices and maps organizational structure through the reportsTo attribute.
+
+Table Name: customers
+Table Description: Captures data on customers, including customer number, name,  contact details,  address,  assigned sales rep and credit limit. Central to managing customer relationships and sales processes.
+
+Table Name: payments
+Table Description: Records payments made by customers, tracking the customer number, check number , payment date, and amount. Linked to the customers tables for financial tracking and account management.
+
+Table Name: orders
+Table Description: Details each sales order placed by customers, including order number, dates, status, comments, and customer number. Linked to the customers table, tracking sales transactions
+
+Table Name: orderdetails
+Table Description: Describes individual line items for each sales order, including order number, product code, quantity, price, and order line number. Links orders to products, detailing the items sold
+
+
+2025-07-20 21:05:37,787 [INFO] Generating SQL Query
+2025-07-20 21:05:37,905 [INFO] Extracted 6 example(s) from python_file
+2025-07-20 21:05:38,481 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:05:38,760 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:05:39,735 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:05:39,737 [INFO] Generated query: SELECT c.customerName, o.orderDate
+FROM customers c
+JOIN orders o ON c.customerNumber = o.customerNumber
+WHERE o.orderDate > '2003-01-06' AND o.orderDate < '2005-03-28';
+2025-07-20 21:05:39,738 [INFO] Executing SQL Query
+2025-07-20 21:05:40,317 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:05:44,884 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:05:44,886 [INFO] Query executed Successfully
+2025-07-20 21:05:44,888 [INFO] Generating Final Answer
+2025-07-20 21:05:44,888 [INFO] Final answer generated successfully
+2025-07-20 21:05:44,889 [INFO] Updating memory
+2025-07-20 21:05:44,890 [ERROR] Error updating Chat History: 'Enlist all the customers who ordered after 2003-01-06 and before 2005-03-28' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2025-07-20 21:05:44,890 [INFO] Memory updated successfully
+2025-07-20 21:06:27,889 [INFO] 1 change detected
+2025-07-20 21:06:47,419 [INFO] 1 change detected
+2025-07-20 21:09:30,787 [INFO] 1 change detected
+2025-07-20 21:09:32,773 [INFO] 1 change detected
+2025-07-20 21:09:36,243 [INFO] 1 change detected
+2025-07-20 21:09:36,598 [INFO] 1 change detected
+2025-07-20 21:14:24,535 [INFO] 1 change detected
+2025-07-20 21:16:25,921 [INFO] Starting schema analysis for collection: NL2SQL
+2025-07-20 21:16:26,654 [INFO] Document structure analysis completed
+2025-07-20 21:16:28,250 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:16:28,258 [INFO] Schema description generated
+2025-07-20 21:16:30,406 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:16:30,412 [ERROR] JSON cleaning failed: Expecting ',' delimiter: line 16 column 87 (char 609)
+2025-07-20 21:16:30,415 [INFO] Generated 3 few-shot examples
+2025-07-20 21:16:31,949 [INFO] Starting schema analysis for collection: NL2SQL
+2025-07-20 21:16:32,003 [INFO] Document structure analysis completed
+2025-07-20 21:16:33,033 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:16:33,035 [INFO] Schema description generated
+2025-07-20 21:16:35,095 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:16:35,098 [ERROR] JSON cleaning failed: Expecting ',' delimiter: line 15 column 57 (char 532)
+2025-07-20 21:16:35,099 [INFO] Generated 3 few-shot examples
+2025-07-20 21:21:02,837 [INFO] Executing query: enlist all the records who has more than 3 columns
+2025-07-20 21:21:05,899 [INFO] Initializing MongoDB connection
+2025-07-20 21:21:06,006 [INFO] MongoDB connection successful - 10 documents in NL2SQL
+2025-07-20 21:21:06,008 [INFO] Creating optimized query generation prompt
+2025-07-20 21:21:06,009 [INFO] Query prompt template created successfully
+2025-07-20 21:21:06,012 [INFO] Generating MongoDB aggregation pipeline
+2025-07-20 21:21:06,570 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:21:06,894 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:21:07,634 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:21:07,637 [INFO] Generated 2 stage pipeline
+2025-07-20 21:21:07,639 [INFO] Executing MongoDB aggregation pipeline
+2025-07-20 21:21:07,657 [INFO] Query executed successfully - 0 documents returned
+2025-07-20 21:21:07,661 [INFO] Generating adaptive conversational response
+2025-07-20 21:21:07,664 [INFO] Generated no_results response for 0 results
+2025-07-20 21:21:07,667 [INFO] Query executed successfully, returned 0 results
+2025-07-20 21:21:53,412 [INFO] Executing query: can you provide recently updated object
+2025-07-20 21:21:56,278 [INFO] Initializing MongoDB connection
+2025-07-20 21:21:56,863 [INFO] MongoDB connection successful - 10 documents in NL2SQL
+2025-07-20 21:21:56,865 [INFO] Creating optimized query generation prompt
+2025-07-20 21:21:56,865 [INFO] Query prompt template created successfully
+2025-07-20 21:21:56,866 [INFO] Generating MongoDB aggregation pipeline
+2025-07-20 21:21:57,393 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:21:57,638 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:21:58,603 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:21:58,610 [ERROR] JSON parsing error: Expecting property name enclosed in double quotes: line 13 column 3 (char 138)
+2025-07-20 21:21:58,610 [INFO] Generated 3 stage pipeline
+2025-07-20 21:21:58,612 [INFO] Executing MongoDB aggregation pipeline
+2025-07-20 21:21:58,634 [INFO] Query executed successfully - 10 documents returned
+2025-07-20 21:21:58,636 [INFO] Generating adaptive conversational response
+2025-07-20 21:21:59,361 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 400 model_error"
+2025-07-20 21:21:59,363 [ERROR] Summary response generation failed: Error code: 400 - {'error': {'message': "This model's maximum context length is 16385 tokens. However, your messages resulted in 20927 tokens. Please reduce the length of the messages.", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}
+2025-07-20 21:21:59,363 [INFO] Generated summary response for 10 results
+2025-07-20 21:21:59,365 [INFO] Query executed successfully, returned 10 results
+2025-07-20 21:23:37,299 [INFO] Executing query: only one latest record
+2025-07-20 21:23:40,222 [INFO] Initializing MongoDB connection
+2025-07-20 21:23:40,260 [INFO] MongoDB connection successful - 10 documents in NL2SQL
+2025-07-20 21:23:40,266 [INFO] Creating optimized query generation prompt
+2025-07-20 21:23:40,267 [INFO] Query prompt template created successfully
+2025-07-20 21:23:40,268 [INFO] Generating MongoDB aggregation pipeline
+2025-07-20 21:23:40,855 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:23:41,114 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:23:41,897 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:23:41,899 [INFO] Generated 2 stage pipeline
+2025-07-20 21:23:41,901 [INFO] Executing MongoDB aggregation pipeline
+2025-07-20 21:23:41,933 [INFO] Query executed successfully - 1 documents returned
+2025-07-20 21:23:41,936 [INFO] Generating adaptive conversational response
+2025-07-20 21:23:42,836 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-20 21:23:42,838 [INFO] Generated detailed response for 1 results
+2025-07-20 21:23:42,841 [INFO] Query executed successfully, returned 1 results
+2025-07-20 21:24:58,406 [INFO] 1 change detected
+2025-07-20 21:25:02,087 [INFO] 7 changes detected
+2025-07-20 21:25:04,062 [INFO] 1 change detected
+2025-07-20 21:25:09,205 [INFO] 1 change detected
+2025-07-20 21:25:12,289 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-20 21:25:12,425 [INFO] 3 changes detected
+2025-07-20 21:25:15,432 [INFO] 1 change detected
+2025-07-20 21:25:17,265 [INFO] 1 change detected
+2025-07-20 21:25:17,631 [INFO] 1 change detected
+2025-07-20 21:27:56,797 [INFO] 1 change detected
+2025-07-20 21:27:57,166 [INFO] 1 change detected
+2025-07-20 21:28:10,219 [INFO] 7 changes detected
+2025-07-20 21:28:51,716 [INFO] 2 changes detected
+2025-07-20 21:39:19,013 [INFO] 1 change detected
+2025-07-20 21:39:38,308 [INFO] 1 change detected
+2025-07-20 21:40:11,037 [INFO] 1 change detected
+2025-07-20 21:40:14,580 [INFO] 1 change detected
+2025-07-20 21:40:31,310 [INFO] 1 change detected
+2025-07-20 21:40:36,949 [INFO] 1 change detected
+2025-07-20 21:40:38,126 [INFO] 1 change detected
+2025-07-20 21:40:48,552 [INFO] 1 change detected
+2025-07-20 21:41:28,219 [INFO] 1 change detected
+2025-07-20 21:41:33,881 [INFO] 1 change detected
+2025-07-20 21:42:16,733 [INFO] 1 change detected
+2025-07-20 21:42:51,677 [INFO] 1 change detected
+2025-07-20 21:42:57,712 [INFO] 1 change detected
+2025-07-20 22:35:10,911 [INFO] 1 change detected
+2025-07-20 22:35:12,785 [INFO] 1 change detected
+2025-07-20 22:37:27,042 [INFO] 1 change detected
+2025-07-20 22:37:39,174 [INFO] 1 change detected
+2025-07-20 22:37:49,175 [INFO] 1 change detected
+2025-07-20 22:38:02,989 [INFO] 4 changes detected
+2025-07-20 22:38:06,477 [INFO] 1 change detected
+2025-07-20 22:38:08,779 [INFO] 1 change detected
+2025-07-20 22:38:15,079 [INFO] 1 change detected
+2025-07-20 22:38:16,970 [INFO] 5 changes detected
+2025-07-20 22:38:19,198 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-20 22:38:19,424 [INFO] 3 changes detected
+2025-07-20 22:38:23,200 [INFO] 1 change detected
+2025-07-20 22:38:25,387 [INFO] 1 change detected
+2025-07-20 22:38:25,750 [INFO] 1 change detected
+2025-07-20 22:38:56,115 [INFO] 2 changes detected
+2025-07-20 22:40:34,343 [INFO] 4 changes detected
+2025-07-20 22:40:36,188 [INFO] 1 change detected
+2025-07-20 22:40:37,317 [INFO] 1 change detected
+2025-07-20 22:40:41,598 [INFO] 1 change detected
+2025-07-20 22:40:41,964 [INFO] 1 change detected
+2025-07-20 22:40:44,053 [INFO] 5 changes detected
+2025-07-20 22:40:45,662 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-20 22:40:45,787 [INFO] 3 changes detected
+2025-07-20 22:40:46,966 [INFO] 1 change detected
+2025-07-20 22:40:55,306 [INFO] 4 changes detected
+2025-07-20 22:40:55,775 [INFO] 1 change detected
+2025-07-20 22:40:56,742 [INFO] 1 change detected
+2025-07-20 22:40:58,573 [INFO] 2 changes detected
+2025-07-20 22:41:01,745 [INFO] 1 change detected
+2025-07-20 22:41:03,375 [INFO] 5 changes detected
+2025-07-20 22:41:05,323 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-20 22:41:05,528 [INFO] 3 changes detected
+2025-07-20 22:41:06,757 [INFO] 1 change detected
+2025-07-20 22:41:30,629 [INFO] 4 changes detected
+2025-07-20 22:41:31,063 [INFO] 1 change detected
+2025-07-20 22:41:32,178 [INFO] 1 change detected
+2025-07-20 22:41:34,622 [INFO] 2 changes detected
+2025-07-20 22:41:37,269 [INFO] 1 change detected
+2025-07-20 22:41:38,998 [INFO] 5 changes detected
+2025-07-20 22:41:40,842 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-20 22:41:40,999 [INFO] 3 changes detected
+2025-07-20 22:41:41,622 [INFO] 4 changes detected
+2025-07-20 22:41:42,649 [INFO] 2 changes detected
+2025-07-20 22:41:43,676 [INFO] 1 change detected
+2025-07-20 22:41:45,614 [INFO] 2 changes detected
+2025-07-20 22:41:48,557 [INFO] 1 change detected
+2025-07-20 22:41:50,497 [INFO] 9 changes detected
+2025-07-20 22:41:51,556 [INFO] 2 changes detected
+2025-07-20 22:41:52,678 [INFO] 1 change detected
+2025-07-20 22:41:53,038 [INFO] 1 change detected
+2025-07-20 22:41:57,535 [INFO] 1 change detected
+2025-07-20 22:41:59,112 [INFO] 5 changes detected
+2025-07-20 22:42:00,731 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-20 22:42:00,901 [INFO] 3 changes detected
+2025-07-20 22:42:01,972 [INFO] 1 change detected
+2025-07-20 22:42:02,388 [INFO] 4 changes detected
+2025-07-20 22:42:02,804 [INFO] 1 change detected
+2025-07-20 22:42:04,032 [INFO] 1 change detected
+2025-07-20 22:42:05,515 [INFO] 2 changes detected
+2025-07-20 22:42:08,689 [INFO] 1 change detected
+2025-07-20 22:42:10,326 [INFO] 5 changes detected
+2025-07-20 22:42:12,212 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-20 22:42:12,360 [INFO] 3 changes detected
+2025-07-20 22:42:13,182 [INFO] 1 change detected
+2025-07-20 22:42:20,320 [INFO] 4 changes detected
+2025-07-20 22:42:20,802 [INFO] 1 change detected
+2025-07-20 22:42:22,496 [INFO] 1 change detected
+2025-07-20 22:42:26,541 [INFO] 2 changes detected
+2025-07-20 22:42:29,275 [INFO] 1 change detected
+2025-07-20 22:42:31,348 [INFO] 5 changes detected
+2025-07-20 22:42:33,348 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-20 22:42:33,494 [INFO] 3 changes detected
+2025-07-20 22:42:34,562 [INFO] 1 change detected
+2025-07-20 22:42:52,678 [INFO] 4 changes detected
+2025-07-20 22:42:53,095 [INFO] 1 change detected
+2025-07-20 22:42:54,269 [INFO] 1 change detected
+2025-07-20 22:42:55,848 [INFO] 2 changes detected
+2025-07-20 22:42:59,391 [INFO] 1 change detected
+2025-07-20 22:43:00,916 [INFO] 5 changes detected
+2025-07-20 22:43:01,427 [INFO] 1 change detected
+2025-07-20 22:43:01,791 [INFO] 4 changes detected
+2025-07-20 22:43:02,202 [INFO] 1 change detected
+2025-07-20 22:43:03,271 [INFO] 1 change detected
+2025-07-20 22:43:07,511 [INFO] 1 change detected
+2025-07-20 22:43:09,300 [INFO] 5 changes detected
+2025-07-20 22:43:09,666 [INFO] 1 change detected
+2025-07-20 22:43:11,460 [INFO] 1 change detected
+2025-07-20 22:43:16,220 [INFO] 4 changes detected
+2025-07-20 22:43:16,645 [INFO] 1 change detected
+2025-07-20 22:43:17,766 [INFO] 1 change detected
+2025-07-20 22:43:21,704 [INFO] 1 change detected
+2025-07-20 22:43:22,473 [INFO] 1 change detected
+2025-07-20 22:43:23,835 [INFO] 5 changes detected
+2025-07-20 22:43:24,306 [INFO] 1 change detected
+2025-07-20 22:44:09,702 [INFO] 4 changes detected
+2025-07-20 22:44:10,118 [INFO] 1 change detected
+2025-07-20 22:44:11,243 [INFO] 1 change detected
+2025-07-20 22:44:13,286 [INFO] 1 change detected
+2025-07-20 22:44:15,725 [INFO] 1 change detected
+2025-07-20 22:44:17,150 [INFO] 5 changes detected
+2025-07-20 22:44:17,505 [INFO] 1 change detected
+2025-07-20 22:44:43,634 [INFO] 4 changes detected
+2025-07-20 22:44:44,047 [INFO] 1 change detected
+2025-07-20 22:44:45,171 [INFO] 1 change detected
+2025-07-20 22:44:49,107 [INFO] 1 change detected
+2025-07-20 22:44:50,593 [INFO] 5 changes detected
+2025-07-20 22:44:50,950 [INFO] 1 change detected
+2025-07-20 22:45:07,984 [INFO] 1 change detected
+2025-07-20 22:45:46,891 [INFO] 4 changes detected
+2025-07-20 22:45:47,252 [INFO] 1 change detected
+2025-07-20 22:45:48,224 [INFO] 1 change detected
+2025-07-20 22:45:51,391 [INFO] 1 change detected
+2025-07-20 22:45:52,621 [INFO] 5 changes detected
+2025-07-20 22:45:52,986 [INFO] 1 change detected
+2025-07-20 22:46:06,146 [INFO] 1 change detected
+2025-07-20 22:46:15,983 [INFO] 1 change detected
+2025-07-20 22:46:48,128 [INFO] 1 change detected
+2025-07-20 22:47:19,246 [INFO] 4 changes detected
+2025-07-20 22:47:19,664 [INFO] 1 change detected
+2025-07-20 22:47:20,710 [INFO] 1 change detected
+2025-07-20 22:47:21,526 [INFO] 1 change detected
+2025-07-20 22:47:26,272 [INFO] 1 change detected
+2025-07-20 22:47:28,005 [INFO] 5 changes detected
+2025-07-20 22:47:28,371 [INFO] 1 change detected
+2025-07-20 22:48:32,636 [INFO] 1 change detected
+2025-07-20 22:49:21,890 [INFO] 4 changes detected
+2025-07-20 22:49:22,360 [INFO] 1 change detected
+2025-07-20 22:49:23,736 [INFO] 1 change detected
+2025-07-20 22:49:25,067 [INFO] 1 change detected
+2025-07-20 22:49:29,255 [INFO] 1 change detected
+2025-07-20 22:49:31,196 [INFO] 5 changes detected
+2025-07-20 22:49:31,557 [INFO] 1 change detected
+2025-07-20 22:49:35,891 [INFO] 4 changes detected
+2025-07-20 22:49:36,414 [INFO] 2 changes detected
+2025-07-20 22:49:38,897 [INFO] 1 change detected
+2025-07-20 22:49:43,458 [INFO] 1 change detected
+2025-07-20 22:49:45,150 [INFO] 5 changes detected
+2025-07-20 22:49:45,519 [INFO] 1 change detected
+2025-07-20 22:50:09,394 [INFO] 1 change detected
+2025-07-20 22:52:51,943 [INFO] 1 change detected
+2025-07-20 22:54:30,406 [INFO] 1 change detected
+2025-07-20 22:54:47,171 [INFO] 1 change detected
+2025-07-20 22:54:54,813 [INFO] 1 change detected
+2025-07-20 22:58:47,186 [INFO] 4 changes detected
+2025-07-20 22:58:47,830 [INFO] 1 change detected
+2025-07-20 22:58:49,722 [INFO] 1 change detected
+2025-07-20 22:58:54,746 [INFO] 1 change detected
+2025-07-20 22:58:56,841 [INFO] 1 change detected
+2025-07-20 22:59:44,247 [INFO] 1 change detected
+2025-07-20 23:00:02,807 [INFO] 1 change detected
+2025-07-20 23:00:25,591 [INFO] 4 changes detected
+2025-07-20 23:00:26,060 [INFO] 1 change detected
+2025-07-20 23:00:27,242 [INFO] 1 change detected
+2025-07-20 23:00:32,856 [INFO] 1 change detected
+2025-07-20 23:00:35,305 [INFO] 1 change detected
+2025-07-20 23:00:38,604 [INFO] 1 change detected
+2025-07-20 23:01:47,316 [INFO] 4 changes detected
+2025-07-20 23:01:47,733 [INFO] 1 change detected
+2025-07-20 23:01:48,812 [INFO] 1 change detected
+2025-07-20 23:01:52,184 [INFO] 1 change detected
+2025-07-20 23:01:53,922 [INFO] 1 change detected
+2025-07-20 23:02:15,071 [INFO] 1 change detected
+2025-07-20 23:02:19,766 [INFO] 4 changes detected
+2025-07-20 23:02:20,249 [INFO] 1 change detected
+2025-07-20 23:02:21,573 [INFO] 1 change detected
+2025-07-20 23:02:25,145 [INFO] 1 change detected
+2025-07-20 23:02:27,092 [INFO] 1 change detected
+2025-07-20 23:02:31,742 [INFO] 1 change detected
+2025-07-20 23:03:22,470 [INFO] 4 changes detected
+2025-07-20 23:03:22,947 [INFO] 1 change detected
+2025-07-20 23:03:24,168 [INFO] 1 change detected
+2025-07-20 23:03:28,201 [INFO] 1 change detected
+2025-07-20 23:03:29,774 [INFO] 1 change detected
+2025-07-20 23:04:10,354 [INFO] 1 change detected
+2025-07-20 23:04:13,822 [INFO] 4 changes detected
+2025-07-20 23:04:14,291 [INFO] 1 change detected
+2025-07-20 23:04:15,419 [INFO] 1 change detected
+2025-07-20 23:04:19,357 [INFO] 1 change detected
+2025-07-20 23:04:20,563 [INFO] 1 change detected
+2025-07-20 23:04:22,622 [INFO] 1 change detected
+2025-07-20 23:05:17,162 [INFO] 1 change detected
+2025-07-20 23:05:44,094 [INFO] 4 changes detected
+2025-07-20 23:05:44,513 [INFO] 1 change detected
+2025-07-20 23:05:45,686 [INFO] 1 change detected
+2025-07-20 23:05:49,513 [INFO] 1 change detected
+2025-07-20 23:05:51,267 [INFO] 1 change detected
+2025-07-20 23:07:15,446 [INFO] 1 change detected
+2025-07-20 23:07:39,696 [INFO] 4 changes detected
+2025-07-20 23:07:40,113 [INFO] 1 change detected
+2025-07-20 23:07:41,808 [INFO] 1 change detected
+2025-07-20 23:07:43,389 [INFO] 1 change detected
+2025-07-20 23:07:46,303 [INFO] 1 change detected
+2025-07-20 23:07:47,943 [INFO] 1 change detected
+2025-07-20 23:07:53,914 [INFO] 4 changes detected
+2025-07-20 23:07:54,335 [INFO] 1 change detected
+2025-07-20 23:07:55,306 [INFO] 1 change detected
+2025-07-20 23:07:59,125 [INFO] 1 change detected
+2025-07-20 23:08:00,346 [INFO] 1 change detected
+2025-07-20 23:08:00,911 [INFO] 1 change detected
+2025-07-20 23:08:09,404 [INFO] 4 changes detected
+2025-07-20 23:08:09,823 [INFO] 1 change detected
+2025-07-20 23:08:10,893 [INFO] 1 change detected
+2025-07-20 23:08:14,457 [INFO] 1 change detected
+2025-07-20 23:08:15,423 [INFO] 1 change detected
+2025-07-20 23:08:16,450 [INFO] 1 change detected
+2025-07-20 23:08:22,904 [INFO] 4 changes detected
+2025-07-20 23:08:23,317 [INFO] 1 change detected
+2025-07-20 23:08:24,384 [INFO] 1 change detected
+2025-07-20 23:08:28,305 [INFO] 1 change detected
+2025-07-20 23:08:29,995 [INFO] 1 change detected
+2025-07-20 23:08:31,886 [INFO] 1 change detected
+2025-07-20 23:09:50,106 [INFO] 4 changes detected
+2025-07-20 23:09:50,529 [INFO] 1 change detected
+2025-07-20 23:09:51,493 [INFO] 1 change detected
+2025-07-20 23:09:53,838 [INFO] 1 change detected
+2025-07-20 23:09:56,025 [INFO] 1 change detected
+2025-07-20 23:09:57,759 [INFO] 1 change detected
+2025-07-20 23:10:33,811 [INFO] 1 change detected
+2025-07-20 23:17:57,966 [INFO] 4 changes detected
+2025-07-20 23:17:58,394 [INFO] 1 change detected
+2025-07-20 23:17:59,780 [INFO] 1 change detected
+2025-07-20 23:18:04,120 [INFO] 1 change detected
+2025-07-20 23:18:05,848 [INFO] 1 change detected
+2025-07-20 23:18:11,138 [INFO] 1 change detected
+2025-07-20 23:18:14,867 [INFO] 4 changes detected
+2025-07-20 23:18:15,240 [INFO] 1 change detected
+2025-07-20 23:18:16,261 [INFO] 1 change detected
+2025-07-20 23:18:19,674 [INFO] 1 change detected
+2025-07-20 23:18:21,355 [INFO] 1 change detected
+2025-07-20 23:20:33,072 [INFO] 1 change detected
+2025-07-20 23:20:41,174 [INFO] 4 changes detected
+2025-07-20 23:20:41,588 [INFO] 1 change detected
+2025-07-20 23:20:42,610 [INFO] 1 change detected
+2025-07-20 23:20:45,513 [INFO] 1 change detected
+2025-07-20 23:20:46,413 [INFO] 1 change detected
+2025-07-20 23:20:47,372 [INFO] 4 changes detected
+2025-07-20 23:20:48,822 [INFO] 2 changes detected
+2025-07-20 23:20:49,794 [INFO] 1 change detected
+2025-07-20 23:20:53,212 [INFO] 1 change detected
+2025-07-20 23:20:53,873 [INFO] 1 change detected
+2025-07-20 23:20:55,827 [INFO] 1 change detected
+2025-07-20 23:21:34,879 [INFO] 1 change detected
+2025-07-20 23:21:47,124 [INFO] 4 changes detected
+2025-07-20 23:21:47,545 [INFO] 1 change detected
+2025-07-20 23:21:48,613 [INFO] 1 change detected
+2025-07-20 23:21:52,073 [INFO] 1 change detected
+2025-07-20 23:21:53,549 [INFO] 1 change detected
+2025-07-20 23:21:54,163 [INFO] 1 change detected
+2025-07-20 23:22:04,138 [INFO] 4 changes detected
+2025-07-20 23:22:04,563 [INFO] 1 change detected
+2025-07-20 23:22:05,579 [INFO] 1 change detected
+2025-07-20 23:22:09,403 [INFO] 1 change detected
+2025-07-20 23:22:11,141 [INFO] 1 change detected
+2025-07-20 23:22:11,495 [INFO] 1 change detected
+2025-07-20 23:22:17,912 [INFO] 4 changes detected
+2025-07-20 23:22:18,282 [INFO] 1 change detected
+2025-07-20 23:22:19,404 [INFO] 1 change detected
+2025-07-20 23:22:22,919 [INFO] 1 change detected
+2025-07-20 23:22:24,477 [INFO] 1 change detected
+2025-07-20 23:22:29,618 [INFO] 1 change detected
+2025-07-20 23:22:33,801 [INFO] 4 changes detected
+2025-07-20 23:22:34,170 [INFO] 1 change detected
+2025-07-20 23:22:35,298 [INFO] 1 change detected
+2025-07-20 23:22:39,184 [INFO] 1 change detected
+2025-07-20 23:22:40,615 [INFO] 1 change detected
+2025-07-20 23:22:40,976 [INFO] 1 change detected
+2025-07-20 23:22:52,465 [INFO] 1 change detected
+2025-07-20 23:23:27,725 [INFO] 1 change detected
+2025-07-20 23:24:21,789 [INFO] 4 changes detected
+2025-07-20 23:24:22,259 [INFO] 1 change detected
+2025-07-20 23:24:23,438 [INFO] 1 change detected
+2025-07-20 23:24:24,564 [INFO] 1 change detected
+2025-07-20 23:24:28,045 [INFO] 1 change detected
+2025-07-20 23:24:29,532 [INFO] 1 change detected
+2025-07-20 23:24:29,884 [INFO] 4 changes detected
+2025-07-20 23:24:30,298 [INFO] 1 change detected
+2025-07-20 23:24:31,472 [INFO] 1 change detected
+2025-07-20 23:24:35,519 [INFO] 1 change detected
+2025-07-20 23:24:37,097 [INFO] 1 change detected
+2025-07-20 23:24:44,642 [INFO] 1 change detected
+2025-07-20 23:24:54,773 [INFO] 4 changes detected
+2025-07-20 23:24:55,308 [INFO] 1 change detected
+2025-07-20 23:24:56,944 [INFO] 1 change detected
+2025-07-20 23:25:01,382 [INFO] 1 change detected
+2025-07-20 23:25:03,061 [INFO] 1 change detected
+2025-07-20 23:25:14,237 [INFO] 1 change detected
+2025-07-20 23:27:48,428 [INFO] 4 changes detected
+2025-07-20 23:27:48,843 [INFO] 1 change detected
+2025-07-20 23:27:49,766 [INFO] 1 change detected
+2025-07-20 23:27:51,909 [INFO] 1 change detected
+2025-07-20 23:27:53,807 [INFO] 1 change detected
+2025-07-20 23:27:55,849 [INFO] 1 change detected
+2025-07-20 23:28:01,529 [INFO] 4 changes detected
+2025-07-20 23:28:01,915 [INFO] 1 change detected
+2025-07-20 23:28:03,278 [INFO] 1 change detected
+2025-07-20 23:28:07,047 [INFO] 1 change detected
+2025-07-20 23:28:08,833 [INFO] 1 change detected
+2025-07-20 23:28:09,553 [INFO] 1 change detected
+2025-07-20 23:28:24,139 [INFO] 1 change detected
+2025-07-20 23:28:28,735 [INFO] 4 changes detected
+2025-07-20 23:28:29,152 [INFO] 1 change detected
+2025-07-20 23:28:29,565 [INFO] 5 changes detected
+2025-07-20 23:28:30,127 [INFO] 1 change detected
+2025-07-20 23:28:33,806 [INFO] 1 change detected
+2025-07-20 23:28:35,752 [INFO] 1 change detected
+2025-07-20 23:28:44,068 [INFO] 1 change detected
+2025-07-20 23:28:50,266 [INFO] 4 changes detected
+2025-07-20 23:28:50,635 [INFO] 1 change detected
+2025-07-20 23:28:51,099 [INFO] 5 changes detected
+2025-07-20 23:28:51,608 [INFO] 1 change detected
+2025-07-20 23:28:53,699 [INFO] 1 change detected
+2025-07-20 23:28:55,727 [INFO] 1 change detected
+2025-07-20 23:28:57,710 [INFO] 1 change detected
+2025-07-20 23:29:05,285 [INFO] 4 changes detected
+2025-07-20 23:29:05,656 [INFO] 1 change detected
+2025-07-20 23:29:06,166 [INFO] 5 changes detected
+2025-07-20 23:29:06,626 [INFO] 1 change detected
+2025-07-20 23:29:10,355 [INFO] 1 change detected
+2025-07-20 23:29:12,248 [INFO] 1 change detected
+2025-07-20 23:29:13,478 [INFO] 1 change detected
+2025-07-20 23:30:36,251 [INFO] 4 changes detected
+2025-07-20 23:30:36,668 [INFO] 1 change detected
+2025-07-20 23:30:37,186 [INFO] 5 changes detected
+2025-07-20 23:30:37,704 [INFO] 1 change detected
+2025-07-20 23:30:38,728 [INFO] 1 change detected
+2025-07-20 23:30:41,798 [INFO] 1 change detected
+2025-07-20 23:30:43,285 [INFO] 1 change detected
+2025-07-20 23:31:06,555 [INFO] 4 changes detected
+2025-07-20 23:31:07,030 [INFO] 1 change detected
+2025-07-20 23:31:07,487 [INFO] 5 changes detected
+2025-07-20 23:31:08,046 [INFO] 1 change detected
+2025-07-20 23:31:11,559 [INFO] 1 change detected
+2025-07-20 23:31:13,548 [INFO] 1 change detected
+2025-07-20 23:31:25,236 [INFO] 1 change detected
+2025-07-20 23:31:35,655 [INFO] 4 changes detected
+2025-07-20 23:31:36,263 [INFO] 1 change detected
+2025-07-20 23:31:37,129 [INFO] 5 changes detected
+2025-07-20 23:31:37,796 [INFO] 1 change detected
+2025-07-20 23:31:40,650 [INFO] 1 change detected
+2025-07-20 23:31:41,857 [INFO] 1 change detected
+2025-07-20 23:31:43,338 [INFO] 1 change detected
+2025-07-20 23:32:43,779 [INFO] 4 changes detected
+2025-07-20 23:32:44,253 [INFO] 1 change detected
+2025-07-20 23:32:44,820 [INFO] 5 changes detected
+2025-07-20 23:32:45,337 [INFO] 1 change detected
+2025-07-20 23:32:46,890 [INFO] 1 change detected
+2025-07-20 23:32:49,630 [INFO] 1 change detected
+2025-07-20 23:32:51,418 [INFO] 1 change detected
+2025-07-20 23:32:53,310 [INFO] 4 changes detected
+2025-07-20 23:32:53,733 [INFO] 1 change detected
+2025-07-20 23:32:54,694 [INFO] 1 change detected
+2025-07-20 23:32:58,267 [INFO] 1 change detected
+2025-07-20 23:32:59,645 [INFO] 5 changes detected
+2025-07-20 23:33:00,018 [INFO] 1 change detected
+2025-07-20 23:33:07,042 [INFO] 1 change detected
+2025-07-20 23:33:42,691 [INFO] 4 changes detected
+2025-07-20 23:33:43,061 [INFO] 1 change detected
+2025-07-20 23:33:44,234 [INFO] 1 change detected
+2025-07-20 23:33:48,058 [INFO] 1 change detected
+2025-07-20 23:33:49,586 [INFO] 5 changes detected
+2025-07-20 23:33:49,946 [INFO] 1 change detected
+2025-07-20 23:33:54,241 [INFO] 1 change detected
+2025-07-20 23:34:28,418 [INFO] 1 change detected
+2025-07-20 23:34:51,717 [INFO] 4 changes detected
+2025-07-20 23:34:52,186 [INFO] 1 change detected
+2025-07-20 23:34:53,465 [INFO] 1 change detected
+2025-07-20 23:34:57,144 [INFO] 1 change detected
+2025-07-20 23:34:58,978 [INFO] 1 change detected
+2025-07-20 23:35:06,931 [INFO] 1 change detected
+2025-07-20 23:35:16,617 [INFO] 1 change detected
+2025-07-21 00:05:43,701 [INFO] 1 change detected
+2025-07-21 00:05:56,468 [INFO] 1 change detected
+2025-07-21 00:06:07,815 [INFO] 1 change detected
+2025-07-21 00:06:12,105 [INFO] 1 change detected
+2025-07-21 00:06:13,894 [INFO] 1 change detected
+2025-07-21 00:06:15,125 [INFO] 1 change detected
+2025-07-21 00:06:26,437 [INFO] 1 change detected
+2025-07-21 00:06:49,584 [INFO] 1 change detected
+2025-07-21 00:07:14,600 [INFO] 1 change detected
+2025-07-21 00:07:25,228 [INFO] 1 change detected
+2025-07-21 00:08:28,590 [INFO] 1 change detected
+2025-07-21 00:08:38,573 [INFO] 1 change detected
+2025-07-21 00:08:42,706 [INFO] 1 change detected
+2025-07-21 00:08:44,688 [INFO] 1 change detected
+2025-07-21 00:08:45,810 [INFO] 1 change detected
+2025-07-21 00:09:00,554 [INFO] 1 change detected
+2025-07-21 00:09:16,449 [INFO] 1 change detected
+2025-07-21 00:09:28,805 [INFO] 1 change detected
+2025-07-21 00:09:33,456 [INFO] 1 change detected
+2025-07-21 00:09:33,826 [INFO] 1 change detected
+2025-07-21 00:09:40,189 [INFO] 1 change detected
+2025-07-21 00:09:50,173 [INFO] 1 change detected
+2025-07-21 00:09:55,422 [INFO] 1 change detected
+2025-07-21 00:09:57,206 [INFO] 8 changes detected
+2025-07-21 00:09:59,368 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:09:59,551 [INFO] 3 changes detected
+2025-07-21 00:09:59,912 [INFO] 10 changes detected
+2025-07-21 00:10:03,955 [INFO] 6 changes detected
+2025-07-21 00:10:06,253 [INFO] 1 change detected
+2025-07-21 00:10:06,613 [INFO] 1 change detected
+2025-07-21 00:10:08,076 [INFO] 1 change detected
+2025-07-21 00:10:08,098 [INFO] 1 change detected
+2025-07-21 00:10:12,449 [INFO] 1 change detected
+2025-07-21 00:10:12,517 [INFO] 2 changes detected
+2025-07-21 00:10:12,816 [INFO] 1 change detected
+2025-07-21 00:10:13,420 [INFO] 1 change detected
+2025-07-21 00:10:13,438 [INFO] 1 change detected
+2025-07-21 00:10:20,264 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:10:20,447 [INFO] 3 changes detected
+2025-07-21 00:10:24,475 [INFO] 1 change detected
+2025-07-21 00:10:26,877 [INFO] 1 change detected
+2025-07-21 00:11:16,681 [INFO] 2 changes detected
+2025-07-21 00:11:18,611 [INFO] 1 change detected
+2025-07-21 00:11:20,952 [INFO] 1 change detected
+2025-07-21 00:11:25,826 [INFO] 1 change detected
+2025-07-21 00:11:25,838 [INFO] 1 change detected
+2025-07-21 00:11:35,203 [INFO] 1 change detected
+2025-07-21 00:11:35,204 [INFO] 1 change detected
+2025-07-21 00:11:45,150 [INFO] 1 change detected
+2025-07-21 00:12:01,583 [INFO] 1 change detected
+2025-07-21 00:12:10,308 [INFO] 1 change detected
+2025-07-21 00:12:10,309 [INFO] 1 change detected
+2025-07-21 00:12:16,733 [INFO] 1 change detected
+2025-07-21 00:12:17,784 [INFO] 1 change detected
+2025-07-21 00:12:25,061 [INFO] 1 change detected
+2025-07-21 00:12:25,061 [INFO] 1 change detected
+2025-07-21 00:12:37,991 [INFO] 1 change detected
+2025-07-21 00:12:40,280 [INFO] 1 change detected
+2025-07-21 00:12:44,146 [INFO] 1 change detected
+2025-07-21 00:12:47,237 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:12:47,367 [INFO] 4 changes detected
+2025-07-21 00:12:50,791 [INFO] 1 change detected
+2025-07-21 00:12:53,092 [INFO] 1 change detected
+2025-07-21 00:12:53,457 [INFO] 1 change detected
+2025-07-21 00:12:54,678 [INFO] 1 change detected
+2025-07-21 00:12:54,688 [INFO] 1 change detected
+2025-07-21 00:12:58,399 [INFO] 1 change detected
+2025-07-21 00:12:58,417 [INFO] 1 change detected
+2025-07-21 00:13:01,312 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:13:01,464 [INFO] 3 changes detected
+2025-07-21 00:13:01,479 [INFO] 3 changes detected
+2025-07-21 00:13:04,727 [INFO] 1 change detected
+2025-07-21 00:13:04,743 [INFO] 1 change detected
+2025-07-21 00:13:05,563 [INFO] 2 changes detected
+2025-07-21 00:13:05,598 [INFO] 2 changes detected
+2025-07-21 00:13:07,031 [INFO] 1 change detected
+2025-07-21 00:13:07,050 [INFO] 1 change detected
+2025-07-21 00:13:07,396 [INFO] 1 change detected
+2025-07-21 00:13:07,412 [INFO] 1 change detected
+2025-07-21 00:13:18,860 [INFO] 1 change detected
+2025-07-21 00:13:18,875 [INFO] 1 change detected
+2025-07-21 00:13:23,543 [INFO] 1 change detected
+2025-07-21 00:13:39,822 [INFO] 1 change detected
+2025-07-21 00:13:39,822 [INFO] 1 change detected
+2025-07-21 00:13:48,763 [INFO] 1 change detected
+2025-07-21 00:13:49,639 [INFO] 1 change detected
+2025-07-21 00:13:51,276 [INFO] 1 change detected
+2025-07-21 00:13:54,593 [INFO] 1 change detected
+2025-07-21 00:13:57,275 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:13:57,445 [INFO] 3 changes detected
+2025-07-21 00:14:00,664 [INFO] 1 change detected
+2025-07-21 00:14:02,702 [INFO] 1 change detected
+2025-07-21 00:14:03,056 [INFO] 1 change detected
+2025-07-21 00:14:04,004 [INFO] 1 change detected
+2025-07-21 00:14:04,028 [INFO] 1 change detected
+2025-07-21 00:14:07,529 [INFO] 1 change detected
+2025-07-21 00:14:07,547 [INFO] 1 change detected
+2025-07-21 00:14:08,349 [INFO] 2 changes detected
+2025-07-21 00:14:08,366 [INFO] 2 changes detected
+2025-07-21 00:14:11,059 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:14:11,188 [INFO] 3 changes detected
+2025-07-21 00:14:11,218 [INFO] 3 changes detected
+2025-07-21 00:14:14,560 [INFO] 1 change detected
+2025-07-21 00:14:14,592 [INFO] 1 change detected
+2025-07-21 00:14:16,734 [INFO] 1 change detected
+2025-07-21 00:14:16,755 [INFO] 1 change detected
+2025-07-21 00:14:17,087 [INFO] 1 change detected
+2025-07-21 00:14:18,566 [INFO] 2 changes detected
+2025-07-21 00:14:18,596 [INFO] 2 changes detected
+2025-07-21 00:14:20,120 [INFO] 1 change detected
+2025-07-21 00:14:20,124 [INFO] 1 change detected
+2025-07-21 00:14:34,763 [INFO] 1 change detected
+2025-07-21 00:15:55,714 [INFO] 1 change detected
+2025-07-21 00:15:59,127 [INFO] 1 change detected
+2025-07-21 00:15:59,483 [INFO] 1 change detected
+2025-07-21 00:16:07,300 [INFO] 1 change detected
+2025-07-21 00:16:12,929 [INFO] 1 change detected
+2025-07-21 00:16:16,704 [INFO] 1 change detected
+2025-07-21 00:16:19,745 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:16:19,870 [INFO] 3 changes detected
+2025-07-21 00:16:23,083 [INFO] 1 change detected
+2025-07-21 00:16:24,966 [INFO] 1 change detected
+2025-07-21 00:16:26,490 [INFO] 1 change detected
+2025-07-21 00:16:26,505 [INFO] 1 change detected
+2025-07-21 00:16:30,235 [INFO] 1 change detected
+2025-07-21 00:16:30,255 [INFO] 1 change detected
+2025-07-21 00:16:33,120 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:16:33,247 [INFO] 4 changes detected
+2025-07-21 00:16:33,264 [INFO] 4 changes detected
+2025-07-21 00:16:36,409 [INFO] 1 change detected
+2025-07-21 00:16:36,425 [INFO] 1 change detected
+2025-07-21 00:16:38,304 [INFO] 1 change detected
+2025-07-21 00:16:38,320 [INFO] 1 change detected
+2025-07-21 00:16:38,657 [INFO] 1 change detected
+2025-07-21 00:16:38,673 [INFO] 1 change detected
+2025-07-21 00:16:44,929 [INFO] 2 changes detected
+2025-07-21 00:16:44,945 [INFO] 2 changes detected
+2025-07-21 00:17:02,557 [INFO] 1 change detected
+2025-07-21 00:17:02,561 [INFO] 1 change detected
+2025-07-21 00:22:15,462 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:22:46,105 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:22:46,311 [INFO] 3 changes detected
+2025-07-21 00:22:51,576 [INFO] 1 change detected
+2025-07-21 00:22:53,522 [INFO] 2 changes detected
+2025-07-21 00:22:56,909 [INFO] 1 change detected
+2025-07-21 00:22:57,283 [INFO] 1 change detected
+2025-07-21 00:23:13,522 [INFO] 3 changes detected
+2025-07-21 00:23:17,289 [INFO] 1 change detected
+2025-07-21 00:23:23,372 [INFO] 1 change detected
+2025-07-21 00:23:25,976 [INFO] 1 change detected
+2025-07-21 00:23:26,335 [INFO] 5 changes detected
+2025-07-21 00:23:30,835 [INFO] 1 change detected
+2025-07-21 00:23:46,786 [INFO] 1 change detected
+2025-07-21 00:23:49,199 [INFO] 1 change detected
+2025-07-21 00:24:28,372 [INFO] 3 changes detected
+2025-07-21 00:24:32,633 [INFO] 1 change detected
+2025-07-21 00:24:42,208 [INFO] 1 change detected
+2025-07-21 00:24:46,017 [INFO] 1 change detected
+2025-07-21 00:24:58,753 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:24:59,074 [INFO] 3 changes detected
+2025-07-21 00:25:13,571 [INFO] 1 change detected
+2025-07-21 00:25:28,982 [INFO] 1 change detected
+2025-07-21 00:25:29,553 [INFO] 1 change detected
+2025-07-21 00:25:30,008 [INFO] 5 changes detected
+2025-07-21 00:38:53,676 [INFO] 1 change detected
+2025-07-21 00:38:54,052 [INFO] 1 change detected
+2025-07-21 00:42:51,641 [INFO] 1 change detected
+2025-07-21 00:43:09,084 [INFO] 4 changes detected
+2025-07-21 00:43:11,666 [INFO] 1 change detected
+2025-07-21 00:43:15,460 [INFO] 1 change detected
+2025-07-21 00:43:16,582 [INFO] 1 change detected
+2025-07-21 00:43:23,202 [INFO] 1 change detected
+2025-07-21 00:43:24,794 [INFO] 5 changes detected
+2025-07-21 00:43:26,922 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:43:27,448 [INFO] 3 changes detected
+2025-07-21 00:43:30,660 [INFO] 1 change detected
+2025-07-21 00:43:32,398 [INFO] 1 change detected
+2025-07-21 00:43:32,756 [INFO] 1 change detected
+2025-07-21 00:43:33,684 [INFO] 4 changes detected
+2025-07-21 00:43:35,377 [INFO] 1 change detected
+2025-07-21 00:43:36,303 [INFO] 1 change detected
+2025-07-21 00:43:39,927 [INFO] 1 change detected
+2025-07-21 00:43:41,308 [INFO] 5 changes detected
+2025-07-21 00:43:42,081 [INFO] 2 changes detected
+2025-07-21 00:43:43,631 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:43:43,778 [INFO] 3 changes detected
+2025-07-21 00:43:47,662 [INFO] 1 change detected
+2025-07-21 00:43:49,553 [INFO] 1 change detected
+2025-07-21 00:43:53,373 [INFO] 2 changes detected
+2025-07-21 00:44:01,656 [INFO] 4 changes detected
+2025-07-21 00:44:03,146 [INFO] 1 change detected
+2025-07-21 00:44:04,021 [INFO] 1 change detected
+2025-07-21 00:44:06,066 [INFO] 1 change detected
+2025-07-21 00:44:08,050 [INFO] 1 change detected
+2025-07-21 00:44:11,145 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:44:11,269 [INFO] 3 changes detected
+2025-07-21 00:44:14,340 [INFO] 1 change detected
+2025-07-21 00:44:15,357 [INFO] 5 changes detected
+2025-07-21 00:44:16,641 [INFO] 1 change detected
+2025-07-21 00:44:16,993 [INFO] 1 change detected
+2025-07-21 00:46:33,951 [INFO] 4 changes detected
+2025-07-21 00:46:35,525 [INFO] 1 change detected
+2025-07-21 00:46:36,501 [INFO] 1 change detected
+2025-07-21 00:46:39,715 [INFO] 1 change detected
+2025-07-21 00:46:42,458 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:46:42,570 [INFO] 4 changes detected
+2025-07-21 00:46:45,130 [INFO] 2 changes detected
+2025-07-21 00:46:45,588 [INFO] 1 change detected
+2025-07-21 00:46:47,348 [INFO] 5 changes detected
+2025-07-21 00:46:48,275 [INFO] 1 change detected
+2025-07-21 00:47:34,101 [INFO] 4 changes detected
+2025-07-21 00:47:36,472 [INFO] 1 change detected
+2025-07-21 00:47:37,796 [INFO] 1 change detected
+2025-07-21 00:47:40,361 [INFO] 1 change detected
+2025-07-21 00:47:41,680 [INFO] 5 changes detected
+2025-07-21 00:47:43,131 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:47:43,270 [INFO] 3 changes detected
+2025-07-21 00:47:46,496 [INFO] 1 change detected
+2025-07-21 00:47:46,851 [INFO] 2 changes detected
+2025-07-21 00:47:48,497 [INFO] 1 change detected
+2025-07-21 00:47:50,949 [INFO] 1 change detected
+2025-07-21 00:49:03,051 [INFO] Created collection ID: 87507f87-698a-4d0d-8b1d-dc9b56efd8c4
+2025-07-21 00:49:03,140 [INFO] 4 changes detected
+2025-07-21 00:49:04,022 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 00:49:04,364 [INFO] 8 changes detected
+2025-07-21 00:49:04,392 [INFO] Successfully indexed lab5.details.txt with file_id: 1
+2025-07-21 00:49:04,410 [ERROR] Error uploading documents: 500: Failed to index Group_11_report.docx
+2025-07-21 00:49:04,737 [INFO] 9 changes detected
+2025-07-21 00:49:05,239 [INFO] 1 change detected
+2025-07-21 00:49:12,443 [INFO] 1 change detected
+2025-07-21 00:49:19,136 [INFO] 1 change detected
+2025-07-21 00:49:29,092 [INFO] 1 change detected
+2025-07-21 00:49:31,750 [INFO] 1 change detected
+2025-07-21 00:49:33,635 [INFO] 1 change detected
+2025-07-21 00:49:38,086 [INFO] 1 change detected
+2025-07-21 00:49:50,529 [INFO] 1 change detected
+2025-07-21 00:49:57,641 [INFO] 1 change detected
+2025-07-21 00:50:15,917 [INFO] 3 changes detected
+2025-07-21 00:50:19,383 [INFO] 1 change detected
+2025-07-21 00:50:22,452 [INFO] 1 change detected
+2025-07-21 00:50:24,662 [INFO] Created collection ID: b273256a-6b7a-4cc4-abd2-d16c463afac3
+2025-07-21 00:50:24,764 [INFO] 4 changes detected
+2025-07-21 00:50:25,374 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 00:50:25,616 [INFO] Successfully indexed lab5.details.txt with file_id: 3
+2025-07-21 00:50:25,695 [INFO] 8 changes detected
+2025-07-21 00:50:26,230 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 00:50:26,502 [INFO] Successfully indexed Group_11_report.docx with file_id: 4
+2025-07-21 00:50:26,566 [INFO] 8 changes detected
+2025-07-21 00:50:27,021 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 00:50:27,064 [INFO] Successfully indexed Keshav Arri list.pdf with file_id: 5
+2025-07-21 00:50:27,132 [INFO] 7 changes detected
+2025-07-21 00:50:32,957 [INFO] 2 changes detected
+2025-07-21 00:50:39,642 [INFO] 1 change detected
+2025-07-21 00:51:41,635 [INFO] 1 change detected
+2025-07-21 00:51:49,508 [INFO] 4 changes detected
+2025-07-21 00:51:51,092 [INFO] 3 changes detected
+2025-07-21 00:51:52,172 [INFO] 1 change detected
+2025-07-21 00:51:52,587 [INFO] 1 change detected
+2025-07-21 00:51:56,915 [INFO] 1 change detected
+2025-07-21 00:51:58,347 [INFO] 5 changes detected
+2025-07-21 00:51:59,925 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:52:00,084 [INFO] 3 changes detected
+2025-07-21 00:52:03,141 [INFO] 1 change detected
+2025-07-21 00:52:05,024 [INFO] 1 change detected
+2025-07-21 00:52:05,130 [INFO] Created collection ID: f56209e2-080f-4968-a1ad-127b11f175bc
+2025-07-21 00:52:05,387 [INFO] 4 changes detected
+2025-07-21 00:52:05,908 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 00:52:06,260 [INFO] 8 changes detected
+2025-07-21 00:52:06,264 [INFO] Successfully indexed lab5.details.txt with file_id: 6
+2025-07-21 00:52:06,622 [INFO] 1 change detected
+2025-07-21 00:52:47,484 [INFO] Created collection ID: d3dcf522-5475-43d2-81e9-02a73ab4cdf7
+2025-07-21 00:52:47,581 [INFO] 4 changes detected
+2025-07-21 00:52:48,287 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 00:52:48,765 [INFO] Successfully indexed Group_11_report.docx with file_id: 7
+2025-07-21 00:52:48,862 [INFO] 5 changes detected
+2025-07-21 00:52:54,631 [INFO] 2 changes detected
+2025-07-21 00:52:58,927 [INFO] 1 change detected
+2025-07-21 00:53:13,272 [INFO] 4 changes detected
+2025-07-21 00:53:15,059 [INFO] 3 changes detected
+2025-07-21 00:53:15,423 [INFO] 1 change detected
+2025-07-21 00:53:16,517 [INFO] 1 change detected
+2025-07-21 00:53:20,043 [INFO] 1 change detected
+2025-07-21 00:53:21,421 [INFO] 5 changes detected
+2025-07-21 00:53:22,796 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 00:53:22,959 [INFO] 3 changes detected
+2025-07-21 00:53:25,810 [INFO] 1 change detected
+2025-07-21 00:53:27,644 [INFO] 1 change detected
+2025-07-21 00:53:27,768 [INFO] Created collection ID: 66fcec91-1f79-463e-9f40-d40d802f269f
+2025-07-21 00:53:28,006 [INFO] 5 changes detected
+2025-07-21 00:53:28,802 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 00:53:29,390 [INFO] 8 changes detected
+2025-07-21 00:53:29,403 [INFO] Successfully indexed Group_11_report.docx with file_id: 8
+2025-07-21 00:53:29,577 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 00:53:29,618 [INFO] Successfully indexed lab prompt.txt with file_id: 9
+2025-07-21 00:53:29,752 [INFO] 13 changes detected
+2025-07-21 00:54:20,804 [INFO] Session ID: 23bb, User Query: what is lab question, Document IDs: [8, 9]
+2025-07-21 00:54:20,807 [INFO] Using documents: ['lab prompt.txt', 'Group_11_report.docx']
+2025-07-21 00:54:21,883 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 00:54:22,584 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-21 00:54:23,036 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 00:54:23,362 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-21 00:54:28,877 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-21 00:54:28,886 [INFO] Session ID: 23bb, AI Response: Based on the information provided in the uploaded documents, specifically from a report related to a project involving Natural Language Processing (NLP) for interacting with databases, the lab question seems to focus on optimizing code to reduce the MOSS score to less than 6. Here are some key points related to the lab question and the project described in the documents:
+
+### Lab Question Overview:
+- **Objective**: Optimize code to reduce MOSS score to less than 6.
+- **Focus**: Structuring the code logic, variables, and structure uniquely to avoid MOSS.
+- **Requirement**: Maintain the existing working code and print statements while restructuring the code.
+
+### Project Details:
+- **Nature of Project**: Involves creating a system where users can interact with databases using natural language queries.
+- **Technology Used**: Large Language Models (LLMs) and LangChain are utilized for this project.
+- **Few-Shot Learning**: The system uses few-shot learning techniques to fine-tune the LLM for generating accurate SQL queries based on natural language input.
+- **Database Support**: Supports querying SQL, NoSQL, and vector-based databases using natural language.
+- **Workflow**: 
+  - Users provide a Python file with example queries and natural language questions for few-shot learning.
+  - The system updates record status to "python pending" and fine-tunes the LLM based on provided data.
+  - LangGraph pipeline validates inputs, connects to the SQL database, generates optimized SQL queries from natural language input, and returns human-readable responses.
+
+### Key Technologies and Concepts:
+- **Natural Language Processing (NLP)**: Enables users to interact with databases using everyday language.
+- **SQL Database Normalization**: Important for data consistency and integrity but can make querying more complex.
+- **Modularization and Exception Handling**: System architecture involves modularized steps for better traceability and robust exception handling for reliability.
+
+The lab question seems to revolve around optimizing existing code to improve its structure and reduce the MOSS score, likely to enhance the efficiency and readability of the codebase. If you need further details or assistance on specific aspects of the lab question or the project, feel free to ask for more information.
+
+*Sources: uploaded documents, web search*
+2025-07-21 00:54:28,946 [INFO] 3 changes detected
+2025-07-21 00:55:45,827 [INFO] Session ID: 23bb, User Query: what is the conclusion in the report, Document IDs: [8, 9]
+2025-07-21 00:55:45,829 [INFO] Using documents: ['lab prompt.txt', 'Group_11_report.docx']
+2025-07-21 00:55:46,467 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 00:55:47,112 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-21 00:55:47,561 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 00:55:47,842 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-21 00:55:51,195 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-21 00:55:51,203 [INFO] Session ID: 23bb, AI Response: Based on the information provided in the uploaded documents, the report draws several conclusions and implications regarding the system developed for querying databases through natural language interfaces. Here are the key conclusions drawn in the report:
+
+### Conclusions from the Report:
+1. **Enhanced Productivity and Accuracy**:
+   - Querying through a natural language interface significantly reduces time and complexity in data retrieval.
+   - Interaction in natural language improves user productivity and comprehension of results.
+   - The integration of few-shot and single-shot learning techniques shows potential to further reduce error rates, enhancing system reliability over time.
+
+2. **Improved System Performance**:
+   - The system significantly reduces the complexity of interacting with heterogeneous data sources by allowing queries in plain English.
+   - Leveraging proper chaining systems like LangGraph enhances traceability, maintainability, and result quality.
+   - Performance metrics show a reduction in time and complexity involved in data retrieval, indicating the system's effectiveness.
+
+3. **Limitations and Challenges**:
+   - One major constraint is the requirement for the SQL database to be highly normalized, which can make querying more complex.
+   - Despite promising results, there are inherent limitations that need to be addressed for system optimization and scalability.
+
+4. **Future Extensions and Opportunities**:
+   - Proposed extensions aim to expand the system's usefulness beyond traditional data access, enabling interactive learning, semantic web search, and advanced research workflows.
+   - The groundwork laid paves the way for developing intelligent, secure, and inclusive tools that reshape how data is queried, understood, and utilized.
+
+5. **Unrealized Aspects**:
+   - There were aspects like message history storage using LangSmith that were initially anticipated but could not be fully integrated due to implementation constraints and time limitations. This highlights areas for potential future development and enhancement.
+
+The report underscores the system's positive impact on productivity, accuracy, and user experience while also acknowledging areas for improvement and future growth. It emphasizes the importance of natural language interfaces in database querying and sets the stage for further advancements in the field of intelligent data retrieval systems.
+
+If you need further details or additional insights, feel free to ask!
+2025-07-21 00:55:51,293 [INFO] 3 changes detected
+2025-07-21 01:00:19,015 [INFO] 2 changes detected
+2025-07-21 01:00:21,396 [INFO] 1 change detected
+2025-07-21 01:04:45,100 [INFO] 1 change detected
+2025-07-21 01:04:47,837 [INFO] 1 change detected
+2025-07-21 01:13:23,034 [INFO] 1 change detected
+2025-07-21 01:55:01,641 [INFO] Created collection ID: e7c02951-4f96-42fc-8124-d3c9a7837dd1
+2025-07-21 01:55:01,793 [INFO] 4 changes detected
+2025-07-21 01:55:03,909 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 01:55:04,987 [INFO] 3 changes detected
+2025-07-21 01:55:05,404 [INFO] 4 changes detected
+2025-07-21 01:55:05,440 [INFO] Successfully indexed Group_11_report.docx with file_id: 10
+2025-07-21 01:55:05,767 [INFO] 1 change detected
+2025-07-21 01:55:22,845 [INFO] Session ID: document-session-1753077322514, User Query: what is the conclusion and references, Document IDs: [10]
+2025-07-21 01:55:22,848 [INFO] Using documents: ['Group_11_report.docx']
+2025-07-21 01:55:23,611 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 01:55:24,306 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-21 01:55:24,785 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 01:55:25,098 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-21 01:55:28,020 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-08-01-preview "HTTP/1.1 200 OK"
+2025-07-21 01:55:28,033 [INFO] Session ID: document-session-1753077322514, AI Response: ### Conclusion:
+- The study demonstrated the potential of integrating Large Language Models (LLMs) with multiple databases (SQL, NoSQL, and vector stores) through a unified natural language interface.
+- Querying through a natural language interface powered by LLMs significantly reduced the time and complexity involved in data retrieval.
+- Interaction in natural language improved user productivity and comprehension of results, while maintaining a comparable error rate to manual querying.
+- Despite promising results, the system has inherent limitations, such as the requirement for highly normalized SQL databases and the labor-intensive nature of curating and maintaining few-shot examples for accurate query generation.
+- The system enhances productivity and accuracy of database querying, improves traceability, maintainability, and quality of results, and upholds privacy and security standards.
+
+### References:
+- Y. Han, C. Liu, and P. Wang. "A comprehensive survey on vector database: Storage and retrieval technique, challenge," arXiv, 2023, preprint, arXiv:2310.11703, DOI: 10.48550 arXiv.2310.11703, [http://arxiv.org/abs/2310.11703](http://arxiv.org/abs/2310.11703).
+- Dr. Shafaq Khan. Summer Semester Advanced Database Topics.
+- Figures from the report: SQL database connection, Vector DB and LangGraph-Based Natural Language Query Workflow, Landing interface of project, No-SQL database connection, User query chat interface, Comparison of Manual vs. System-based Querying.
+
+The conclusion highlights the benefits of integrating LLMs with databases for natural language querying, emphasizing improved productivity, reduced complexity, and enhanced accuracy in database retrieval processes.
+2025-07-21 01:55:28,112 [INFO] 3 changes detected
+2025-07-21 01:57:18,874 [INFO] MongoDB----------
+2025-07-21 01:57:19,068 [INFO] Empty record created
+2025-07-21 01:57:19,072 [INFO] Data Schema
+2025-07-21 01:57:19,119 [INFO] Updating data and status of file
+2025-07-21 01:57:45,678 [INFO] 1 change detected
+2025-07-21 01:58:22,661 [INFO] Loading upload record from ID: 687dd6be0baa05f9e4f01f23
+2025-07-21 01:58:22,664 [INFO] Validating record status
+2025-07-21 01:58:22,668 [INFO] Initializing database connection
+2025-07-21 01:58:22,931 [ERROR] Error initializing database connection: (pymysql.err.OperationalError) (1045, "Access denied for user 'root '@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 01:58:22,932 [INFO] Getting Table Information
+2025-07-21 01:58:22,935 [INFO] Selecting relevant tables
+2025-07-21 01:58:22,936 [INFO] Selected tables: Table Name: productlines
+Table Description: Stores information about the different product lines offered by the company, including a unique name, textual description, HTML description , and image. Categorizes products into different lines.
+
+Table Name: products
+Table Description: Contains details of each product sold by the company, including code, name, product line, scale, vendor, description, stock quantity, buy price, and MSRP. Linked to the productlines table
+
+Table Name: offices
+Table Description: Holds data on the company's sales offices, including office code, city, phone number, address , state, country, postal code, and territory. Each office is uniquely identified by its office code.
+
+Table Name: employees
+Table Description: Stores information about employees, including number, last name, first name, job title, contact info, and office code. Links to offices and maps organizational structure through the reportsTo attribute.
+
+Table Name: customers
+Table Description: Captures data on customers, including customer number, name,  contact details,  address,  assigned sales rep and credit limit. Central to managing customer relationships and sales processes.
+
+Table Name: payments
+Table Description: Records payments made by customers, tracking the customer number, check number , payment date, and amount. Linked to the customers tables for financial tracking and account management.
+
+Table Name: orders
+Table Description: Details each sales order placed by customers, including order number, dates, status, comments, and customer number. Linked to the customers table, tracking sales transactions
+
+Table Name: orderdetails
+Table Description: Describes individual line items for each sales order, including order number, product code, quantity, price, and order line number. Links orders to products, detailing the items sold
+
+
+2025-07-21 01:58:22,939 [INFO] Generating SQL Query
+2025-07-21 01:58:22,956 [ERROR] Error generating query: (pymysql.err.OperationalError) (1045, "Access denied for user 'root '@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-21 01:58:22,958 [INFO] Executing SQL Query
+2025-07-21 01:58:22,958 [ERROR] Error executing query: No query generated
+2025-07-21 01:58:28,388 [INFO] 1 change detected
+2025-07-21 01:58:38,174 [INFO] 1 change detected
+2025-07-21 01:59:08,287 [INFO] MongoDB----------
+2025-07-21 01:59:08,289 [INFO] Empty record created
+2025-07-21 01:59:08,290 [INFO] Data Schema
+2025-07-21 01:59:08,291 [INFO] Updating data and status of file
+2025-07-21 01:59:57,800 [INFO] Loading upload record from ID: 687dd72c0baa05f9e4f01f24
+2025-07-21 01:59:57,807 [INFO] Validating record status
+2025-07-21 01:59:57,809 [INFO] Initializing database connection
+2025-07-21 01:59:58,048 [INFO] Database Connection established successfully
+2025-07-21 01:59:58,050 [INFO] Getting Table Information
+2025-07-21 01:59:58,054 [INFO] Selecting relevant tables
+2025-07-21 01:59:58,056 [INFO] Selected tables: Table Name: productlines
+Table Description: Stores information about the different product lines offered by the company, including a unique name, textual description, HTML description , and image. Categorizes products into different lines.
+
+Table Name: products
+Table Description: Contains details of each product sold by the company, including code, name, product line, scale, vendor, description, stock quantity, buy price, and MSRP. Linked to the productlines table
+
+Table Name: offices
+Table Description: Holds data on the company's sales offices, including office code, city, phone number, address , state, country, postal code, and territory. Each office is uniquely identified by its office code.
+
+Table Name: employees
+Table Description: Stores information about employees, including number, last name, first name, job title, contact info, and office code. Links to offices and maps organizational structure through the reportsTo attribute.
+
+Table Name: customers
+Table Description: Captures data on customers, including customer number, name,  contact details,  address,  assigned sales rep and credit limit. Central to managing customer relationships and sales processes.
+
+Table Name: payments
+Table Description: Records payments made by customers, tracking the customer number, check number , payment date, and amount. Linked to the customers tables for financial tracking and account management.
+
+Table Name: orders
+Table Description: Details each sales order placed by customers, including order number, dates, status, comments, and customer number. Linked to the customers table, tracking sales transactions
+
+Table Name: orderdetails
+Table Description: Describes individual line items for each sales order, including order number, product code, quantity, price, and order line number. Links orders to products, detailing the items sold
+
+
+2025-07-21 01:59:58,079 [INFO] Generating SQL Query
+2025-07-21 01:59:58,136 [INFO] 1 change detected
+2025-07-21 01:59:58,255 [INFO] Extracted 6 example(s) from python_file
+2025-07-21 01:59:58,311 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-07-21 01:59:59,817 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:00:00,499 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:00:01,729 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:00:01,733 [INFO] Generated query: SELECT o.`officeCode`, o.`city`, o.`phone`, o.`addressLine1`, o.`addressLine2`, o.`state`, o.`country`, o.`postalCode`, o.`territory`
+FROM offices o
+JOIN employees e ON o.`officeCode` = e.`officeCode`
+WHERE e.`lastName` = 'Patterson' AND e.`firstName` = 'Mary';
+2025-07-21 02:00:01,735 [INFO] Executing SQL Query
+2025-07-21 02:00:02,463 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:00:03,029 [INFO] 1 change detected
+2025-07-21 02:00:03,097 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:00:03,101 [INFO] Query executed Successfully
+2025-07-21 02:00:03,103 [INFO] Generating Final Answer
+2025-07-21 02:00:03,111 [INFO] Final answer generated successfully
+2025-07-21 02:00:03,113 [INFO] Updating memory
+2025-07-21 02:00:03,117 [ERROR] Error updating Chat History: 'do you know the address of mary patterson' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+2025-07-21 02:00:03,119 [INFO] Memory updated successfully
+2025-07-21 02:00:11,906 [INFO] 1 change detected
+2025-07-21 02:00:14,384 [INFO] 1 change detected
+2025-07-21 02:01:44,956 [INFO] Starting schema analysis for collection: NL2SQL
+2025-07-21 02:01:45,966 [INFO] Document structure analysis completed
+2025-07-21 02:01:47,532 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:01:47,536 [INFO] Schema description generated
+2025-07-21 02:01:49,748 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:01:49,751 [ERROR] JSON cleaning failed: Expecting ',' delimiter: line 15 column 57 (char 514)
+2025-07-21 02:01:49,753 [INFO] Generated 3 few-shot examples
+2025-07-21 02:01:51,314 [INFO] Starting schema analysis for collection: NL2SQL
+2025-07-21 02:01:51,358 [INFO] Document structure analysis completed
+2025-07-21 02:01:52,535 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:01:52,538 [INFO] Schema description generated
+2025-07-21 02:01:54,616 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:01:54,618 [ERROR] JSON cleaning failed: Expecting ',' delimiter: line 15 column 104 (char 527)
+2025-07-21 02:01:54,619 [INFO] Generated 3 few-shot examples
+2025-07-21 02:02:05,962 [INFO] Executing query: how many have csv content
+2025-07-21 02:02:10,093 [INFO] Initializing MongoDB connection
+2025-07-21 02:02:10,182 [INFO] MongoDB connection successful - 12 documents in NL2SQL
+2025-07-21 02:02:10,184 [INFO] Creating optimized query generation prompt
+2025-07-21 02:02:10,184 [INFO] Query prompt template created successfully
+2025-07-21 02:02:10,186 [INFO] Generating MongoDB aggregation pipeline
+2025-07-21 02:02:10,698 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:02:10,941 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/Text-Analytics/embeddings?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:02:12,016 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:02:12,018 [INFO] Generated 2 stage pipeline
+2025-07-21 02:02:12,020 [INFO] Executing MongoDB aggregation pipeline
+2025-07-21 02:02:12,050 [INFO] Query executed successfully - 1 documents returned
+2025-07-21 02:02:12,053 [INFO] Generating adaptive conversational response
+2025-07-21 02:02:12,718 [INFO] HTTP Request: POST https://slideoo-editor-chatbot.openai.azure.com/openai/deployments/slideoo-chat-1/chat/completions?api-version=2024-02-01 "HTTP/1.1 200 OK"
+2025-07-21 02:02:12,724 [INFO] Generated detailed response for 1 results
+2025-07-21 02:02:12,726 [INFO] Query executed successfully, returned 1 results
+2025-07-21 02:03:31,190 [INFO] 1 change detected
