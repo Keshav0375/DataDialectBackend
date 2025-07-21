@@ -1,2 +1,53 @@
-.env
+# === Python bytecode and cache ===
+__pycache__/
+*.py[cod]
+*$py.class
+
+# === Virtual environments ===
+venv/
+env/
+.venv/
+.env/           # If using .env as a folder (e.g., for secrets per environment)
+.env            # If .env is a file
+
+# === Logs and output ===
+*.log
 datadialect.log
+
+# === OS-generated files ===
+.DS_Store
+Thumbs.db
+
+# === Editor-specific ===
+.vscode/
+.idea/
+
+# === Jupyter Notebooks Checkpoints ===
+.ipynb_checkpoints/
+
+# === Build directories ===
+build/
+dist/
+*.egg-info/
+
+# === Testing ===
+htmlcov/
+.tox/
+.coverage
+.cache
+pytest_cache/
+
+# === MyPy & other type checkers ===
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+
+# === CI/CD secrets ===
+secrets/
+*.pem
+*.key
+
+# === Misc ===
+*.sqlite3
+*.db
