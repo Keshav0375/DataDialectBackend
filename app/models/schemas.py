@@ -66,7 +66,7 @@ class SQLQueryResponse(BaseModel):
     error: Optional[str] = None
 
 
-class NoSQLState(TypedDict):
+class NoSQLState(TypedDict, total=False):
     """State model for NoSQL MongoDB LangGraph workflow"""
     success: Optional[bool]
     question: str
@@ -89,6 +89,14 @@ class NoSQLState(TypedDict):
     query_context: Optional[Dict[str, Any]]
     execution_stats: Optional[Dict[str, Any]]
     response_type: Optional[str]
+    quality_score: Optional[int]
+    judge_reasoning: Optional[str]
+    sample_documents: Optional[List[Dict[str, Any]]]
+    field_analysis: Optional[Dict[str, Any]]
+    learning_examples: Optional[List[Dict[str, Any]]]
+    rephrased_question: Optional[str]
+    fallback_attempt: Optional[bool]
+    exploratory_results: Optional[Dict[str, Any]]
 
 
 class NoSQLQueryRequest(BaseModel):
@@ -115,6 +123,12 @@ class NoSQLQueryResponse(BaseModel):
     execution_stats: Optional[Dict[str, Any]] = None
     messages: Optional[List[Dict[str, str]]] = []
     error: Optional[str] = None
+    quality_score: Optional[int] = None
+    used_fallback: Optional[bool] = False
+    rephrased_question: Optional[str] = None
+    learning_applied: Optional[bool] = False
+    query_context: Optional[Dict[str, Any]] = None
+    judge_reasoning: Optional[str] = None
 
 class FewShotExample(BaseModel):
     """Few-shot example model"""
@@ -177,3 +191,21 @@ class DocumentUploadResponse(BaseModel):
     collection_id: str
     documents: List[Dict[str, Any]]
     total_files: int
+
+
+class DatabaseLearningResult(BaseModel):
+    """Model for database learning exploration results"""
+    field_existence: Dict[str, int] = Field(description="Fields and their document counts")
+    data_patterns: Dict[str, List[str]] = Field(description="Sample data patterns for fields")
+    array_fields: Dict[str, Dict[str, Any]] = Field(description="Array field analysis")
+    nested_patterns: Dict[str, List[Dict[str, Any]]] = Field(description="Nested object patterns")
+    date_fields: Dict[str, Dict[str, Any]] = Field(description="Date field analysis")
+    total_explorations: int = Field(description="Number of exploratory queries executed")
+
+class EnhancedFewShotExample(BaseModel):
+    """Enhanced few-shot example with validation info"""
+    input: str
+    query: List[Dict[str, Any]]
+    description: Optional[str] = None
+    validation: Optional[str] = None  # NEW: Validation information
+    source: Optional[str] = None  # NEW: Source (original, learning, etc.)

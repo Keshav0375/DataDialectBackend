@@ -2,7 +2,7 @@ from typing import Dict, List, Any
 import ast
 from bson import ObjectId
 from operator import itemgetter
-
+import os
 from langchain_core.runnables import RunnablePassthrough
 
 from langgraph.graph import StateGraph, END
@@ -22,6 +22,8 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 
 from app.database.operations import get_upload_record, update_chat_history
 from app.models.schemas import SQLState, TableSchema
+from langchain_aws import ChatBedrock
+import boto3
 
 from logging_config import setup_logger
 
@@ -57,33 +59,86 @@ def serialize_for_msgpack(obj):
         return obj
 
 
+aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
+aws_secret_access_key = os.getenv("AWS_SECRET_ACCESS_KEY")
 
 class SQLNodes:
     def __init__(self, azure_api_key: str = None, azure_endpoint: str = None,
-                 azure_api_version: str = None, openai_api_key: str = None):
+                 azure_api_version: str = None, openai_api_key: str = None,
+                 aws_access_key_id: str = None,
+                 aws_secret_access_key: str = None,
+                 aws_region: str = "us-east-1",
+                 claude_model_id: str = "anthropic.claude-3-5-sonnet-20240620-v1:0:0",
+                 ):
+        self.aws_access_key_id = aws_access_key_id
+        self.aws_secret_access_key = aws_secret_access_key
+        self.aws_region = aws_region
+        self.claude_model_id = claude_model_id
+
         self.azure_api_key = azure_api_key
         self.azure_endpoint = azure_endpoint
         self.azure_api_version = azure_api_version
         self.openai_api_key = openai_api_key
 
-        self.llm = self._initialize_llm()
+        self.llm = self._initialize_query_llm()
         self.embeddings = self._initialize_embeddings()
 
-    def _initialize_llm(self):
-        """Initialize LLM based on available credentials"""
-        if self.azure_api_key and self.azure_endpoint and self.azure_api_version:
-            return AzureChatOpenAI(
-                deployment_name="slideoo-chat-1",
-                temperature=1,
-                max_tokens=4000,
-                azure_endpoint=self.azure_endpoint,
-                api_key=self.azure_api_key,
-                api_version=self.azure_api_version,
-            )
-        elif self.openai_api_key:
-            return ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
-        else:
-            raise ValueError("No valid API key provided for OpenAI or Azure")
+    def _initialize_query_llm(self):
+        """Initialize LLM for query generation with lower temperature - Priority: Claude > Azure > OpenAI"""
+
+        # Try Claude via AWS Bedrock first
+        try:
+            if self.aws_access_key_id and self.aws_secret_access_key:
+                logger.info("AWS Claude")
+                return ChatBedrock(
+                    model_id=self.claude_model_id,
+                    region_name=self.aws_region,
+                    credentials_profile_name=None,  # We'll set credentials directly
+                    model_kwargs={
+                        "max_tokens": 4000,
+                        "temperature": 0.1,
+                        "top_p": 0.9,
+                    },
+                    # Set AWS credentials
+                    client=boto3.client(
+                        'bedrock-runtime',
+                        aws_access_key_id=self.aws_access_key_id,
+                        aws_secret_access_key=self.aws_secret_access_key,
+                        region_name=self.aws_region
+                    )
+                )
+        except Exception as e:
+            print(f"Failed to initialize Claude via Bedrock: {e}")
+
+        # Fallback to Azure OpenAI
+        try:
+            if self.azure_api_key and self.azure_endpoint and self.azure_api_version:
+                logger.info("Azure OpenAI")
+                return AzureChatOpenAI(
+                    deployment_name="slideoo-chat-1",
+                    temperature=0.1,
+                    max_tokens=4000,
+                    azure_endpoint=self.azure_endpoint,
+                    api_key=self.azure_api_key,
+                    api_version=self.azure_api_version,
+                )
+        except Exception as e:
+            print(f"Failed to initialize Azure OpenAI: {e}")
+
+        # Final fallback to OpenAI
+        try:
+            if self.openai_api_key:
+                logger.info("OpenAI")
+                return ChatOpenAI(
+                    model="gpt-3.5-turbo",
+                    temperature=0.1,
+                    max_tokens=4000,
+                    api_key=self.openai_api_key
+                )
+        except Exception as e:
+            print(f"Failed to initialize OpenAI: {e}")
+
+        raise ValueError("No valid API credentials provided for Claude, Azure OpenAI, or OpenAI")
 
     def _initialize_embeddings(self):
         """Initialize embeddings for example selection"""
@@ -225,18 +280,60 @@ class SQLNodes:
     def table_func(self, state: SQLState):
         """Extract relevant table names from the question"""
         table_details = state["relevant_tables"]
-        table_details_prompt = f"""Return the names of ALL the SQL tables that MIGHT be relevant to the user question. \
-        The tables are:
 
-        {table_details}"""
-        table_chain = create_extraction_chain_pydantic(
-            TableSchema,
-            self.llm,
-            system_message=table_details_prompt
-        )
-        relevant_tables = table_chain.invoke({"input": state["question"]})
+        # Create a simple prompt-based approach instead of using extraction chain
+        table_details_prompt = f"""Given the following user question and available tables, return ONLY the names of SQL tables that might be relevant to answering the question.
 
-        return relevant_tables
+    Available tables:
+    {table_details}
+
+    User question: {state["question"]}
+
+    Instructions:
+    - Return only table names, one per line
+    - Include ALL tables that might be relevant
+    - If unsure, include the table
+    - Do not include explanations or additional text
+
+    Table names:"""
+
+        try:
+            # Use direct LLM call instead of extraction chain for Bedrock compatibility
+            from langchain_core.prompts import PromptTemplate
+            from langchain_core.output_parsers import StrOutputParser
+
+            prompt = PromptTemplate.from_template(table_details_prompt)
+            chain = prompt | self.llm | StrOutputParser()
+
+            response = chain.invoke({"question": state["question"]})
+
+            # Parse the response to extract table names
+            table_names = [name.strip() for name in response.split('\n') if name.strip()]
+
+            # Create a mock TableSchema response to maintain compatibility
+            # Assuming TableSchema has a 'table_names' field
+            class MockTableSchema:
+                def __init__(self, table_names):
+                    self.table_names = table_names
+
+            return MockTableSchema(table_names)
+
+        except Exception as e:
+            logger.error(f"Error in table_func: {e}")
+            # Fallback: return all available tables
+            all_tables = []
+            for line in table_details.split('\n'):
+                if line.startswith('Table Name:'):
+                    table_name = line.replace('Table Name:', '').strip()
+                    all_tables.append(table_name)
+
+            class MockTableSchema:
+                def __init__(self, table_names):
+                    self.table_names = table_names
+
+            return MockTableSchema(all_tables)
+
+
     def get_example_selector(self, state: SQLState):
         """Get Example Selector for few shot prompting"""
         try:
@@ -365,6 +462,39 @@ class SQLNodes:
             db = SQLDatabase.from_uri(db_uri)
             execute_query = QuerySQLDatabaseTool(db=db)
 
+            # Extract just the SQL query if there's additional text
+            sql_query = query
+            if "SELECT" in query.upper():
+                # Find the actual SQL query in the response
+                lines = query.split('\n')
+                for line in lines:
+                    line = line.strip()
+                    if line.upper().startswith('SELECT'):
+                        sql_query = line
+                        # Check if query continues on next lines
+                        line_idx = lines.index(line)
+                        for next_line in lines[line_idx + 1:]:
+                            next_line = next_line.strip()
+                            if next_line and not next_line.startswith('#') and not next_line.startswith('--'):
+                                if any(keyword in next_line.upper() for keyword in
+                                       ['FROM', 'WHERE', 'JOIN', 'ORDER BY', 'GROUP BY', 'HAVING', 'LIMIT']):
+                                    sql_query += ' ' + next_line
+                                else:
+                                    break
+                        break
+
+            # Execute the query directly
+            try:
+                result = execute_query.run(sql_query)
+            except Exception as e:
+                logger.error(f"Query execution failed: {e}")
+                # Try to clean up the query and execute again
+                cleaned_query = sql_query.replace('\n', ' ').strip()
+                if cleaned_query.endswith(';'):
+                    cleaned_query = cleaned_query[:-1]
+                result = execute_query.run(cleaned_query)
+
+            # Create the answer prompt
             answer_prompt = PromptTemplate.from_template(
                 """Given the following user question, corresponding SQL query, and SQL result, answer the user question.
 
@@ -376,18 +506,16 @@ class SQLNodes:
 
             rephrase_answer = answer_prompt | self.llm | StrOutputParser()
 
-            chain = (
-                    RunnablePassthrough.assign(
-                        table_names_to_use=lambda x: self.table_func(state)) |
-                    RunnablePassthrough.assign(query=lambda x: query).assign(
-                        result=itemgetter("query") | execute_query
-                    )
-                    | rephrase_answer
-            )
-            result = chain.invoke({"question": state["question"]})
-            state["query_result"] = result
+            # Generate the final answer
+            final_result = rephrase_answer.invoke({
+                "question": state["question"],
+                "query": sql_query,
+                "result": result
+            })
 
+            state["query_result"] = final_result
             logger.info("Query executed Successfully")
+
         except Exception as e:
             logger.error(f"Error executing query: {e}")
             state["error"] = f"Query execution failed: {str(e)}"
@@ -460,8 +588,9 @@ class SQLGraph:
                  azure_api_version: str = None, openai_api_key: str = None):
 
         self.nodes = SQLNodes(
-            azure_api_key, azure_endpoint,
-            azure_api_version, openai_api_key
+            azure_api_key, azure_endpoint, azure_api_version, openai_api_key,
+            aws_access_key_id, aws_secret_access_key, aws_region="us-east-1",
+            claude_model_id="anthropic.claude-3-5-sonnet-20240620-v1:0",
         )
 
         self.graph = self._create_graph()

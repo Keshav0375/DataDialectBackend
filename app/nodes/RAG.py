@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 from langgraph.checkpoint.memory import MemorySaver
 import os, json
 from logging_config import setup_logger
+from langchain_aws import ChatBedrock
+import boto3
 
 load_dotenv()
 
@@ -18,33 +20,86 @@ azure_api_key = os.getenv("API_KEY")
 azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
 azure_api_version = os.getenv("rag_API_VERSION", "2023-05-15")
 openai_api_key = os.getenv("OPENAI_API_KEY")
+aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
+aws_secret_access_key = os.getenv("AWS_SECRET_ACCESS_KEY")
 
 
 class RAGNodes:
     def __init__(self, azure_api_key: str = None, azure_endpoint: str = None,
-                 azure_api_version: str = None, openai_api_key: str = None):
+                 azure_api_version: str = None, openai_api_key: str = None,
+                 aws_access_key_id: str = None,
+                 aws_secret_access_key: str = None,
+                 aws_region: str = "us-east-1",
+                 claude_model_id: str = "anthropic.claude-3-5-sonnet-20240620-v1:0:0",
+                 ):
+        self.aws_access_key_id = aws_access_key_id
+        self.aws_secret_access_key = aws_secret_access_key
+        self.aws_region = aws_region
+        self.claude_model_id = claude_model_id
+
         self.azure_api_key = azure_api_key
         self.azure_endpoint = azure_endpoint
         self.azure_api_version = azure_api_version
         self.openai_api_key = openai_api_key
 
-        self.llm = self._initialize_llm()
+        self.query_llm = self._initialize_query_llm()
 
-    def _initialize_llm(self):
-        """Initialize LLM based on available credentials"""
-        if self.azure_api_key and self.azure_endpoint and self.azure_api_version:
-            return AzureChatOpenAI(
-                deployment_name="slideoo-chat-1",
-                temperature=1,
-                max_tokens=4000,
-                azure_endpoint=self.azure_endpoint,
-                api_key=self.azure_api_key,
-                api_version=self.azure_api_version,
-            )
-        elif self.openai_api_key:
-            return ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
-        else:
-            raise ValueError("No valid API key provided for OpenAI or Azure")
+    def _initialize_query_llm(self):
+        """Initialize LLM for query generation with lower temperature - Priority: Claude > Azure > OpenAI"""
+
+        # Try Claude via AWS Bedrock first
+        try:
+            if self.aws_access_key_id and self.aws_secret_access_key:
+                logger.info("AWS Claude")
+                return ChatBedrock(
+                    model_id=self.claude_model_id,
+                    region_name=self.aws_region,
+                    credentials_profile_name=None,  # We'll set credentials directly
+                    model_kwargs={
+                        "max_tokens": 4000,
+                        "temperature": 0.1,
+                        "top_p": 0.9,
+                    },
+                    # Set AWS credentials
+                    client=boto3.client(
+                        'bedrock-runtime',
+                        aws_access_key_id=self.aws_access_key_id,
+                        aws_secret_access_key=self.aws_secret_access_key,
+                        region_name=self.aws_region
+                    )
+                )
+        except Exception as e:
+            print(f"Failed to initialize Claude via Bedrock: {e}")
+
+        # Fallback to Azure OpenAI
+        try:
+            if self.azure_api_key and self.azure_endpoint and self.azure_api_version:
+                logger.info("Azure OpenAI")
+                return AzureChatOpenAI(
+                    deployment_name="slideoo-chat-1",
+                    temperature=0.1,
+                    max_tokens=4000,
+                    azure_endpoint=self.azure_endpoint,
+                    api_key=self.azure_api_key,
+                    api_version=self.azure_api_version,
+                )
+        except Exception as e:
+            print(f"Failed to initialize Azure OpenAI: {e}")
+
+        # Final fallback to OpenAI
+        try:
+            if self.openai_api_key:
+                logger.info("OpenAI")
+                return ChatOpenAI(
+                    model="gpt-3.5-turbo",
+                    temperature=0.1,
+                    max_tokens=4000,
+                    api_key=self.openai_api_key
+                )
+        except Exception as e:
+            print(f"Failed to initialize OpenAI: {e}")
+
+        raise ValueError("No valid API credentials provided for Claude, Azure OpenAI, or OpenAI")
 
     def router_node(self, state: AgentState) -> AgentState:
         """Enhanced router node with document awareness"""
@@ -225,8 +280,9 @@ class RAGGraph:
                  azure_api_version: str = None, openai_api_key: str = None):
 
         self.nodes = RAGNodes(
-            azure_api_key, azure_endpoint,
-            azure_api_version, openai_api_key
+            azure_api_key, azure_endpoint, azure_api_version, openai_api_key,
+            aws_access_key_id, aws_secret_access_key, aws_region="us-east-1",
+            claude_model_id="anthropic.claude-3-5-sonnet-20240620-v1:0",
         )
 
         self.graph = self._create_graph()
